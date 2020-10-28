@@ -1,24 +1,35 @@
-# README
+# TSUNAGI-APP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+## 使い方
 
-* Configuration
+このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
+その後、次のコマンドで必要になる Gemsと jqueryをインストールします。
 
-* Database creation
+```
+$ bundle install --without production
+```
 
-* Database initialization
+```
+$ yarn add jquery
+```
 
-* How to run the test suite
+その後、データベースへのマイグレーションを実行します。
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails db:migrate
+```
 
-* Deployment instructions
+最後に、テストを実行してうまく動いているかどうか確認してください。
 
-* ...
+```
+$ rails test
+```
+
+テストが無事に通ったら、Railsサーバーを立ち上げる準備が整っているはずです。
+
+```
+$ rails server
+```
