@@ -1,0 +1,29 @@
+  <header>
+    <nav class="white z-depth-2">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo grey-text text-darken-4">TSUNAGI</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger grey-text text-darken-4">
+          <i class="material-icons grey-text text-darken-4">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down nav-url">
+          <li><%= link_to  "検索する", "#" ,class: "grey-text text-darken-4"%></li>
+          <li><%= link_to  "投稿する", "#" ,class: "grey-text text-darken-4"%></li>
+          <li><%= link_to  "新規登録", "#" ,class: "grey-text text-darken-4"%></li>
+          <!--<li><%= link_to  "ログアウト", "#" ,class: "grey-text text-darken-4"%></li>-->
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#">Sass</a></li>
+    <li><a href="#">Components</a></li>
+    <li><a href="#">Javascript</a></li>
+    <li><a href="#">Mobile</a></li>
+  </ul>
+
+  <script>
+    $(document).ready(function() {
+      $('.sidenav').sidenav();
+    });
+  </script>
