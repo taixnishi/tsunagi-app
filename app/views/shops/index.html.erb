@@ -1,0 +1,14 @@
+<div class="container">
+  <p>投稿一覧</p>
+  <% @shops.each do |shop| %>
+  <%= shop.name %>
+  <%= shop.genre %>
+  <%= shop.content %>
+  <%= shop.created_at %>
+  <%= link_to  '詳細', shop_path(shop.id) %>
+  <% end %>
+  <div class="d">
+    <%= link_to  '投稿する', new_shop_path %>
+    <!--<%= link_to  '編集する', edit_shop_path(:id) %> -->
+  </div>
+</div>

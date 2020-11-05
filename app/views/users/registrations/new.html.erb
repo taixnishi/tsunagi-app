@@ -4,6 +4,12 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field input-field col s12">
+    <i class="material-icons prefix">account_circle</i>
+    <%= f.label :username %>
+    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+  </div>
+
+  <div class="field input-field col s12">
     <i class="material-icons prefix">mail</i>
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
