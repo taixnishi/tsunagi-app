@@ -7,6 +7,7 @@ ruby '2.7.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
 # ####################################
+gem 'font-awesome-sass'
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'

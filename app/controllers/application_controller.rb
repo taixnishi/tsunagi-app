@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # before_action :authenticate_user!
   # ログイン後に遷移したいページを指定
   def after_sign_in_path_for(resource)
-    root_path
+    user_path(resource.id)
   end
 
 

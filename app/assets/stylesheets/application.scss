@@ -15,7 +15,8 @@
  *= require_self
  */
 
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "materialize/components/color-variables";
 $primary-color: color("blue-grey", "darken-4") !default;
 $secondary-color: color("blue", "darken-3") !default;

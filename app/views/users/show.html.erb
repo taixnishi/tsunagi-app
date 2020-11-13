@@ -1,0 +1,5 @@
+<p>MyPage <%= @user.id %></p>
+<% @shops.each do |shop| %>
+<hr>
+<p><span>内容: </span><%=link_to shop.content, shop_path(shop.id) %></p>
+<% end %>

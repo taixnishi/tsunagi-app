@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable # ,:omniauthable, omniauth_providers:[:twitter] 
+
+  has_many :shops
 end

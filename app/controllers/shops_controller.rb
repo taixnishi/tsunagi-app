@@ -1,4 +1,6 @@
 class ShopsController < ApplicationController
+  # ログインしていないユーザーをログイン画面に送る
+  before_action :authenticate_user!, except: [:index]  
   before_action :set_find, only: [:show, :edit,:update,:destroy]
   def index
     @shops = Shop.all
@@ -10,6 +12,7 @@ class ShopsController < ApplicationController
 
   def create 
     @shop = Shop.new(shop_params)
+    @shop.user_id = current_user.id
     if @shop.save 
       # flash[:success] = "投稿が完了しました"
       redirect_to shops_path
@@ -20,6 +23,7 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @user = @shop.user
   end
 
   def edit

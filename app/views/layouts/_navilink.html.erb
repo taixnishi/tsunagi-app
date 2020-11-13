@@ -1,10 +1,11 @@
-    <% if user_signed_in? %>
-    <li><%= link_to  current_user.username , root_path ,class: "grey-text text-darken-4"%></li>
-    <li><%= link_to 'プロフィール変更', edit_user_registration_path,class: "grey-text text-darken-4" %></li>
-    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class: "grey-text text-darken-4" %></li>
-    <li><%= link_to  "検索する", "#" ,class: "grey-text text-darken-4"%></li>
-    <li><%= link_to  "投稿する", new_shop_path ,class: "grey-text text-darken-4"%></li>
-    <% else %>
-    <li><%= link_to 'サインアップ', new_user_registration_path,class: "grey-text text-darken-4" %></li>
-    <li><%= link_to 'ログイン', new_user_session_path , class: "grey-text text-darken-4" %></li>
-    <% end %>
+<% if user_signed_in? %>
+<li><%= link_to  current_user.username,user_path(current_user.id),class: "grey-text text-darken-4"%></li>
+<li><%= link_to 'プロフィール変更', edit_user_registration_path,class: "grey-text text-darken-4" %></li>
+<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class: "grey-text text-darken-4" %></li>
+<li><%= link_to  "検索する", "#" ,class: "grey-text text-darken-4"%></li>
+<li><%= link_to  "投稿する", new_shop_path ,class: "grey-text text-darken-4"%></li>
+<% else %>
+<li><%= link_to 'サインアップ', new_user_registration_path,class: "grey-text text-darken-4"%></li>
+<li><%= link_to 'ログイン', new_user_session_path , class: "grey-text text-darken-4" %></li>
+<% end %>
+<li><%= link_to "お店一覧", shops_path, class: "grey-text text-darken-4"%></li>
