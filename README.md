@@ -1,4 +1,4 @@
-# TSUNAGI-APP
+# TSUNAGI-APP(制作中：就活のためまったり開発してます)
 
 
 
