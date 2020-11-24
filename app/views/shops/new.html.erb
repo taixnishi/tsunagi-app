@@ -13,6 +13,10 @@
       <%= f.label :'説明' %>
       <%= f.text_area :content ,class: "materialize-textarea"%>
     </div>
+    <div class="input-field col s12">
+      <%= f.label :image %>
+      <%= f.file_field :image ,class: "materialize-textarea"%>
+    </div>
     <%= f.submit '投稿する' %>
   </div>
   <% end %>

@@ -1,10 +1,10 @@
 <div class="container">
   <div class="test">
-    <p><%= @shop.name %></p>
-    <p><%= @shop.content %></p>
-    <p><%= @shop.genre %></p>
-    <p><%= @shop.created_at %></p>
-    <p><span>email: </span><%= @user.email %></p> <!-- 追加 -->
+    <p>お店: <%= @shop.name %></p>
+    <p>内容: <%= @shop.content %></p>
+    <p>ジャンル: <%= @shop.genre %></p>
+    <p>作成日: <%= @shop.created_at %></p>
+    <p><span>名前: </span><%= @user.username %></p> <!-- 追加 -->
   </div>
 
   <%= link_to "一覧に戻る", shops_path %>

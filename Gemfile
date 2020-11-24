@@ -11,6 +11,11 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
+#############################
+gem 'carrierwave'
+gem 'rmagick'
+gem 'cloudinary'
+##############################
 # ################################
 # Use Puma as the app server
 gem 'puma', '~> 4.1'

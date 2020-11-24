@@ -31,7 +31,7 @@ class ShopsController < ApplicationController
 
     private
         def shop_params
-            params.require(:shop).permit(:content,:genre,:name)
+            params.require(:shop).permit(:content,:genre,:name,:image)
         end
 
         def set_find 

@@ -1,12 +1,16 @@
 <div class="container">
   <p>投稿一覧</p>
   <% @shops.each do |shop| %>
-  <%= shop.name %>
-  <%= shop.genre %>
-  <%= shop.content %>
-  <%= shop.created_at %>
-  <%= link_to  '詳細', shop_path(shop.id) %>
-  <p><span>email: </span><%=link_to shop.user.email, user_path(shop.user.id) %></p>
+  <div class="content">
+    <p><%= image_tag shop.image_url, size: "250x200" if shop.image? %></p>
+    <p>名前: <%= shop.name %></p>
+    <p>ジャンル: <%= shop.genre %></p>
+    <p>内容: <%= shop.content %></p>
+    <p><span>ユーザー: </span><%=link_to shop.user.username, user_path(shop.user.id) %></p>
+    <p>作成日: <%= shop.created_at %></p>
+    <p><%= link_to  '詳細', shop_path(shop.id) %></p>
+
+  </div>
   <% end %>
   <div class="d">
     <%= link_to  '投稿する', new_shop_path %>
