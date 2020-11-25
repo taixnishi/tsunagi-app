@@ -15,6 +15,8 @@ gem 'dotenv-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'cloudinary'
+gem "geocoder"
+gem 'gon'
 ##############################
 # ################################
 # Use Puma as the app server

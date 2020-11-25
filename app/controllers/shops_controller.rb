@@ -24,6 +24,9 @@ class ShopsController < ApplicationController
 
   def show
     @user = @shop.user
+    @latitude = @shop.latitude
+    @longitude = @shop.longitude
+    @address = @shop.address
   end
 
   def edit
@@ -31,7 +34,7 @@ class ShopsController < ApplicationController
 
     private
         def shop_params
-            params.require(:shop).permit(:content,:genre,:name,:image)
+            params.require(:shop).permit(:content,:genre,:name,:image,:address,:latitude,:longitude)
         end
 
         def set_find 
