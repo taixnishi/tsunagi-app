@@ -1,8 +1,11 @@
 <div class="container">
-  <div class="test">
-    <p>お店: <%= @shop.name %></p>
+  <div class="show-content">
+    <div class="name_genre">
+      <p class="show-shopname-font"><%= @shop.name%></p>
+      <p>ジャンル: <%= @shop.genre %></p>
+    </div>
+    <%= image_tag @shop.image_url, class:"shop-img-show" if @shop.image? %>  
     <p>内容: <%= @shop.content %></p>
-    <p>ジャンル: <%= @shop.genre %></p>
     <p>作成日: <%= @shop.created_at %></p>
     <p>住所: <%= @shop.address %></p>
     <p><span>名前: </span><%= @user.username %></p> 
@@ -12,9 +15,14 @@
   <%= link_to "一覧に戻る", shops_path %>
 </div>
 
+<style type="text/css">
+  #map {
+    height: 200px;
+    width: 70%;
+  }
+</style>
+
 <script type="text/javascript">
-  let map
-  let geocoder
 
   function initMap () {
     let test = { 
@@ -22,7 +30,7 @@
       lng: <%= @shop.longitude %>
       }
 
-    map = new google.maps.Map(document.getElementById('map'), {
+    const map = new google.maps.Map(document.getElementById('map'), {
       zoom: 15,
       center: test
     });
@@ -45,13 +53,5 @@
     });
   }
 </script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
-
-
-<style type="text/css">
-  #map {
-    height: 200px;
-    width: 70%;
-  }
-</style>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"></script>
+<!--data-turbolinks-eval="false"-->

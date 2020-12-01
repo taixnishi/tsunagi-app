@@ -2,9 +2,9 @@
   <p><%= current_user.username %>さんのMyPage</p>
   <p>メールアドレス : <%= current_user.email %></p>
   <% if @user.image? %>
-  <%= image_tag @user.image.url%>
+  <%= image_tag @user.image.url ,class: "user_img"%>
   <% else %>
-  <%= image_tag "user.png"%>
+  <%= image_tag "user.png" ,class: "default_user_img"%>
   <%end%>
 
   <% if current_user.id == @user.id %>
