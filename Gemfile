@@ -9,7 +9,6 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # ####################################
 gem 'font-awesome-sass'
 gem 'devise'
-gem 'omniauth-twitter'
 gem 'dotenv-rails'
 #############################
 gem 'carrierwave'
