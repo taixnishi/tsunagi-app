@@ -48,3 +48,58 @@
 .show-shopname-font{
   font-size: 24px;
 }
+
+// create-btn
+.create-btn {
+  text-align: center;
+  margin: 5px;
+  // position: -webkit-sticky;
+  // position: sticky;
+  // top: 70px;
+}
+.btn-open {
+  display: inline-block;
+  width: 180px;
+  height: 36px;
+  text-align: center;
+  background-color: #000;
+  font-size: 14px;
+  line-height: 38px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #000;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.btn-open:after{
+  width: 100%;
+  height: 0;
+  content:"";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background : #FFF;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transition: .2s;
+  z-index: -1;
+}
+.btn-open:hover{
+  color: #000;
+}
+.btn-open:hover:after{
+  height: 240%;
+  opacity: 1;
+}
+.btn-open:active:after{
+  height: 340%;
+  opacity: 1;
+}
+
+
+
+.content-title{
+  text-align: center;
+}

@@ -6,5 +6,6 @@ class User < ApplicationRecord
          :confirmable # ,:omniauthable, omniauth_providers:[:twitter] 
 
   has_many :shops
+  has_many :cloths
   mount_uploader :image, ImageUploader
 end

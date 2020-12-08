@@ -7,7 +7,10 @@
   </div>
 </div>
 <div class="container">
-  <p>古着屋さん一覧</p>
+  <div class="create-btn">
+    <%= link_to '投稿する', new_shop_path ,class: "btn-open"%>
+  </div>
+    <p class="content-title">古着屋さん一覧</p>
   <% @shops.each do |shop| %>
   <div class="content">
     <div class="name_genre">
@@ -30,13 +33,10 @@
           <p class="username"><%=link_to shop.user.username, user_path(shop.user.id) %></p>
         </div>
           <p>作成日: <%= shop.created_at %></p>
+          <%= link_to '削除', shop_path(shop.id), method: :delete %>
+          <%= link_to '編集', edit_shop_path(shop.id)%>
       </div>
     </div>
-
   </div>
   <% end %>
-  <div class="d">
-    <%= link_to  '投稿する', new_shop_path %>
-    <!--<%= link_to  '編集する', edit_shop_path(:id) %> -->
-  </div>
 </div>

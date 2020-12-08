@@ -1,11 +1,11 @@
 <div class="container">
   <p><%= current_user.username %>さんのMyPage</p>
-  <p>メールアドレス : <%= current_user.email %></p>
   <% if @user.image? %>
   <%= image_tag @user.image.url ,class: "user_img"%>
   <% else %>
   <%= image_tag "user.png" ,class: "default_user_img"%>
   <%end%>
+  <p>メールアドレス : <%= current_user.email %></p>
 
   <% if current_user.id == @user.id %>
   <%= link_to "ユーザー情報を編集する", edit_user_registration_path %>

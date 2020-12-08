@@ -1,30 +1,5 @@
 <div class="container">
-  <%= form_with( model: @shop, local: true ) do |f| %>
-  <div class="row">
-    <div class="input-field col s12">
-      <%=f.label :'名前' %>
-      <%= f.text_field :name %>
-    </div>
-    <div class="input-field col s12">
-      <%= f.label :'ジャンル' %>
-      <%= f.text_field :genre %>
-    </div>
-    <div class="input-field col s12">
-      <%= f.label :'説明' %>
-      <%= f.text_area :content ,class: "materialize-textarea"%>
-    </div>
-
-    <div class="input-field col s12">
-      <%= f.label :'住所' %>
-      <%= f.text_field :address ,class: "materialize-textarea"%>
-    </div>
-    
-    <div class="input-field col s12">
-      <%= f.label :image %>
-      <%= f.file_field :image ,class: "materialize-textarea"%>
-    </div>
-    <%= f.submit '投稿する' %>
-  </div>
-  <% end %>
+  <p>新規投稿</p>
+  <%= render "form" %>
   <%= link_to "一覧", shops_path %>
 </div>

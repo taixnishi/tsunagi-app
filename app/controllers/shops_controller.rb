@@ -27,9 +27,28 @@ class ShopsController < ApplicationController
     @latitude = @shop.latitude
     @longitude = @shop.longitude
     @address = @shop.address
+
+    @cloths = @shop.cloths
+    @cloth = Cloth.new  
   end
 
   def edit
+  end
+
+  def update
+    if @shop.update_attributes(shop_params)
+      # flash[:success] = "updated"
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    if @shop.user_id == current_user.id
+      @shop.destroy
+      redirect_to root_path
+    end
   end
 
     private

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cloth_contents: MyString
+  image: MyString
+  cloth_name: MyString
+  user: one
+  shop: one
+
+two:
+  cloth_contents: MyString
+  image: MyString
+  cloth_name: MyString
+  user: two
+  shop: two
