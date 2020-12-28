@@ -36,18 +36,8 @@
   margin-left: 10px;
 }
 
-.show-content{
-  margin: 0 auto;
-  padding: 20px;
-}
-.shop-img-show{
-  margin-top: 20px;
-  width: 640px;
-  height: 360px;
-}
-.show-shopname-font{
-  font-size: 24px;
-}
+
+
 
 // create-btn
 .create-btn {
@@ -102,4 +92,53 @@
 
 .content-title{
   text-align: center;
+}
+
+
+// showhtml
+
+.shop-summary{
+  padding: 1.2rem;
+  border: solid #000 1px;
+  height: 300px;
+  margin: 0 auto;
+  width: 90%;
+}
+#map {
+  height: 300px;
+  width: 90%;
+  margin: 30px auto 0;
+}
+.shop-img-show{
+  display: block;
+  margin: 0 auto 30px;
+  width: 90%;
+  height: 360px;
+}
+.show-content{
+  margin: 0 auto;
+}
+.show-main{
+  display: flex;
+  padding: 30px;
+}
+.show-main-right{
+  width: 70%;
+}
+.show-main-left{
+  width: 30%;
+}
+.clothes{
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.cloth{
+  margin: 5px;
+  text-align: center;
+}
+.cloth-img{
+  width: 270px;
+  height: 336px;
 }

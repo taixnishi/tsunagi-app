@@ -1,41 +1,53 @@
-<div class="container">
-  <div class="show-content">
-    <div class="name_genre">
-      <p class="show-shopname-font"><%= @shop.name%></p>
-      <p>ジャンル: <%= @shop.genre %></p>
+  <div class="show-main">
+    <!---->
+  <!---------------------------------------------------------------------------------------------------------------->
+    <div class="show-main-right">
+      <%= image_tag @shop.image_url, class:"shop-img-show" if @shop.image? %>  
+      <div class="clothes">
+      <% @cloths.each do |cloth| %>
+        <div class="cloth">
+          <%= image_tag cloth.image_url,class:"cloth-img" if cloth.image? %>
+          <p>ブランド:<%= cloth.cloth_name %></p>
+          <p>ジャンル:<%= cloth.cloth_name %></p>
+          <%= link_to '削除', shop_cloth_path(@shop,cloth.id), method: :delete %>
+        </div>
+      <% end %>
+      </div>
     </div>
-    <%= image_tag @shop.image_url, class:"shop-img-show" if @shop.image? %>  
-    <p>内容: <%= @shop.content %></p>
-    <p>作成日: <%= @shop.created_at %></p>
-    <p>住所: <%= @shop.address %></p>
-    <p><span>名前: </span><%= @user.username %></p> 
-    <div id="map"></div>
+
+    <div class="show-content show-main-left">
+    <!---->
+      <div class="shop-info">
+        <div class="shop-summary">
+          <p><%= @shop.name%></p>
+          <p>ジャンル: <%= @shop.genre %></p>
+          <p>内容: <%= @shop.content %></p>
+          <p>住所: <%= @shop.address %></p>
+        </div>
+        <div id="map" class="shop-map"></div>
+      </div>
+    </div>
   </div>
 
+
+  <!-- -->
+  <div class="postuser-info">
+    <p><span>投稿者: </span><%= @user.username %></p> 
+    <p>作成日: <%= @shop.created_at %></p>
+  </div>
   <%= link_to "一覧に戻る", shops_path %>
-
-  <!---------------------------------------------------------------------------------------------------------------->
-  <p>服服服服服</p>
-  <% @cloths.each do |cloth| %>
-    <div>
-      <%= cloth.cloth_content %>
-      <hr>
-    </div>
-  <% end %>
-  
+  <!-- -->
+  <!--form -->
   <%= form_with(model:[@shop, @cloth], method: :post) do |f| %>
-    <%= f.text_area :cloth_content %>
-    <%= f.submit 'コメントする' %>
+    <%= f.label :'服の名前' %>
+    <%= f.text_area :cloth_name %>
+    <%= f.label :'服の説明' %>
+    <%= f.text_area :cloth_contents %>
+    <%= f.file_field :image %>
+    <%= f.submit '服を追加する' %>
   <% end %>
-  <!---------------------------------------------------------------------------------------------------------------->
-</div>
-
-<style type="text/css">
-  #map {
-    height: 200px;
-    width: 70%;
-  }
-</style>
+  <!--form -->
+<!------------------------------------------------------------------------------------------------------------------>
 
 <script type="text/javascript">
 
@@ -70,3 +82,4 @@
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"></script>
 <!--data-turbolinks-eval="false"-->
+<!------------------------------------------------------------------------------------------------------------------>
