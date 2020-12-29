@@ -1,0 +1,11 @@
+{
+"ruby.useBundler": true, // VSCodeが実行するgem関連のコマンドをbundle execで実行するかどうか
+"ruby.lint": {
+  "rubocop": { // RuboCop, Standard or Reek
+    "useBundler": true // bundlerでインストールしているgemを使うか否か
+    },
+},
+"ruby.format": "rubocop",
+"emmet.triggerExpansionOnTab": true,
+"files.autoSave": "afterDelay" // formatに使うgemを指定(RuboCop, Standard, Rufo or RubyFMT)。bundlerでインストールしたgemを使うかどうかは、ruby.useBundler依存
+}

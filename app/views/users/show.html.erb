@@ -1,20 +1,45 @@
 <div class="container">
-  <p><%= current_user.username %>さんのMyPage</p>
-  <% if @user.image? %>
-  <%= image_tag @user.image.url ,class: "user_img"%>
-  <% else %>
-  <%= image_tag "user.png" ,class: "default_user_img"%>
-  <%end%>
-  <p>メールアドレス : <%= current_user.email %></p>
+  <div class="user-info">
+    <div class="user-info-left">
+      <% if @user.image? %>
+      <%= image_tag @user.image.url ,class: "user_img"%>
+      <% else %>
+      <%= image_tag "user.png" ,class: "default_user_img"%>
+      <%end%>
+    </div>
+    <div class="user-info-right">
+      <p><%= current_user.username %></p>
+      <p>mail: <%= current_user.email %></p>
+      <% if current_user.id == @user.id %>
+      <%= link_to "ユーザー情報を編集する", edit_user_registration_path %>
+      <% end %>
+    </div>
+  </div>
+  <hr class="bar">
 
-  <% if current_user.id == @user.id %>
-  <%= link_to "ユーザー情報を編集する", edit_user_registration_path %>
-  <% end %>
 
-  <p>投稿一覧</p>
-  <% @shops.each do |shop| %>
-  <hr>
-  <p><span>内容: </span><%=link_to shop.content, shop_path(shop.id) %></p>
-  <% end %>
   <%= link_to "一覧に戻る", shops_path %>
 </div>
+  <section>
+    <ul class="tab">
+        <li><a href="" class="active">投稿したお店</a></li>
+        <li><a href="">お気に入りのお店</a></li>
+        <li><a href="">お気に入りの洋服</a></li>
+    </ul>
+    <ul class="contents">
+      <li class="active">
+        <% @shops.each do |shop| %>
+          <div class="show-shops">
+              <%= image_tag shop.image_url, class:"shop-img" if shop.image? %>
+              <div class="show-shop-summaury">
+                <p><%= link_to  shop.name, shop_path(shop.id) %></p>
+              </div>
+          </div>
+        <% end %>
+      </li>
+      <li>タブ2</li>
+      <li>タブ3</li>
+    </ul>
+  </section>
+
+  <%= javascript_pack_tag 'users/show' %>

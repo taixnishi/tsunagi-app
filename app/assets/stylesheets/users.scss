@@ -1,8 +1,92 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+*{
+color: #333;
+text-decoration: none;
+}
 .user_img,.default_user_img{
-    width: 100px;
-    height: 100px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
 }
+.user-info{
+    display: flex;
+    margin: 10px auto;
+}
+.user-info-left{
+    width: 30%;
+    text-align: center;
+}
+.user-info-right{
+    border-radius: 10px;
+    background-color: #fff;
+    width: 70%;
+    font-size: 1.25rem;
+}
+.bar{
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background-color: rgba(0,0,0,.5);
+    border: 0; 
+}
+.show-shops{
+    width: 29%;
+    border: black solid 1px;
+    text-align: center;
+    margin: 0 10px;
+}
+.show-shop-summaury{
+    text-align: center;
+}
+
+// tab
+section{
+    width: auto;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.tab{
+    display: flex;
+}
+.tab li{
+    width: 20%;
+}
+.tab li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    color: black;
+    background-color: #fff;
+    transition: 0.3s;
+    border: black 1px solid;
+}
+
+@media screen and (min-width: 769px){
+    .tab li a:not(.active):hover{
+        opacity: 0.7;
+    }
+}
+.tab li a.active{
+    background-color: #bbb;
+}
+.contents,ul.tab{
+    margin: 0;
+}
+.contents li {
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+    min-height: 300px;
+    border: black solid 1px;
+}
+.contents li.active{
+    display: flex;
+    justify-content: space-between;
+}
+// tabここまで

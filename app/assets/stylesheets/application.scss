@@ -25,6 +25,13 @@ $secondary-color: color("blue", "darken-3") !default;
 
 /* universal */
 
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+*{
+  color: #333;
+  text-decoration: none;
+}
 .wrap {
   margin-top: 56px;
   width: 100%;
