@@ -18,13 +18,6 @@ class ClothsController < ApplicationController
         @cloth = @shop.cloths.find(params[:id])
         @cloth.destroy
         redirect_back(fallback_location: root_path)
-        # if @cloth.destroy
-        #     flash[:success] = "削除しました"
-        #     redirect_to @shop_path(@shop)
-        # else
-        #     flash[:alert] = '削除に失敗しました'
-        #     render @shop_path(@shop)
-        # end
     end
 
         private

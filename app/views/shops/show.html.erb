@@ -3,13 +3,22 @@
   <!---------------------------------------------------------------------------------------------------------------->
     <div class="show-main-right">
       <%= image_tag @shop.image_url, class:"shop-img-show" if @shop.image? %>  
+      
       <div class="clothes">
       <% @cloths.each do |cloth| %>
         <div class="cloth">
           <%= image_tag cloth.image_url,class:"cloth-img" if cloth.image? %>
-          <p>ブランド:<%= cloth.cloth_name %></p>
-          <p>ジャンル:<%= cloth.cloth_name %></p>
-          <%= link_to '削除', shop_cloth_path(@shop,cloth.id), method: :delete %>
+          <div class="cloth-explation">
+            <p class="cloth-name"><%= cloth.cloth_name %></p>
+            <p><%= cloth.cloth_name %></p>
+          </div>
+          <%= link_to shop_cloth_path(@shop,cloth.id), method: :delete ,class: "delete" do %>
+            <i class="far fa-trash-alt"></i>削除
+          <% end %>
+          /<%= link_to shop_cloth_path(@shop,cloth.id), method: :delete ,class: "delete" do %>
+            <i class="far fa-trash-alt"></i>編集
+          <% end %>
+          <hr>
         </div>
       <% end %>
       </div>
@@ -20,9 +29,14 @@
       <div class="shop-info">
         <div class="shop-summary">
           <p><%= @shop.name%></p>
-          <p>ジャンル: <%= @shop.genre %></p>
-          <p>内容: <%= @shop.content %></p>
-          <p>住所: <%= @shop.address %></p>
+          <hr class="blue-horizon" size="10" width="70%" noshade/>
+          <div>
+          <ul>
+            <li><p>ジャンル: <%= @shop.genre %></p></li>
+            <li><p>内容: <%= @shop.content %></p></li>
+            <li><p>住所: <%= @shop.address %></p></li>
+          </ul>
+          </div>
         </div>
         <div id="map" class="shop-map"></div>
       </div>

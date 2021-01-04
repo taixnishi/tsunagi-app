@@ -38,7 +38,7 @@ text-decoration: none;
     width: 29%;
     border: black solid 1px;
     text-align: center;
-    margin: 0 10px;
+    margin: 20px 10px;
 }
 .show-shop-summaury{
     text-align: center;
@@ -88,5 +88,6 @@ section{
 .contents li.active{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 // tabここまで

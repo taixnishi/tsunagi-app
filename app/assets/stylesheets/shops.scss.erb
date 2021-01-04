@@ -1,0 +1,253 @@
+// Place all the styles related to the shops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// create-btn######################################
+.create-btn {
+  text-align: center;
+  margin: 5px;
+}
+.arrow_r {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  background-color: #000;
+  color: #fff;
+  border: #000 2px solid;
+  text-decoration: none;
+  width: 382px;
+  height: 45px;
+  line-height: 45px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.arrow_r:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -4px;
+  transition: all 0.3s;
+  transform: rotate(45deg);
+}
+.arrow_r:hover{
+  background-color: #fff;
+  color: #000;
+}
+.arrow_r:hover:before{
+  border-top: solid 2px #000;
+  border-right: solid 2px #000;
+}
+// ##############################################
+// indexhtml
+.section-title{
+  font-size: 2.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 20px auto 0;
+}
+.section-sub-title{
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 5px 0px 30px;
+}
+
+@media only screen and (min-width: 601px){
+    .container {
+      width: 85% !important;
+    }
+}
+
+.user_shop_img,.default_user_shop_img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.user{
+  display: flex;
+}
+.username{
+  margin-left: 10px;
+}
+.contents-area{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.area{
+  width: 30%;
+  margin: 20px;
+  height: 300px;
+  text-align: center;
+  vertical-align: middle;
+}
+.area-serach{
+  margin-top: 50px;
+}
+.sub-area-serach{
+  margin: 0;
+}
+.osaka{
+  background-image: url("<%= asset_path('osaka.jpg') %>");
+  background-size: cover;
+}
+.tokyo{
+  background-image: url("<%= asset_path('tokyo.jpg') %>");
+  background-size: cover;
+}
+.kyoto{
+  background-image: url("<%= asset_path('kyoto.jpg') %>");
+  background-size: cover;
+}
+.area-btn{
+margin-top: 40px;
+}
+.content-title{
+  text-align: center;
+}
+.content-summary{
+  padding: 1.1rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.content-summary > p:first-child{
+  color: black;
+  font-weight: bold;
+  margin: 20px auto 10px;
+}
+.content-summary > div {
+  margin: 40px auto;
+  text-align: right;
+}
+.content-summary>div>ul{
+  text-align: left; 
+  margin-left: auto; 
+  margin-right: 10%; 
+  width: auto; 
+}
+
+.blue-horizon{
+  height: 3px;
+  border: none;
+  background-color: #4169e1;
+  margin-bottom: 10px;
+}
+.content-right{
+  width: 60%;
+  border: rgba(0,0,0,.7) 1px solid;
+}
+.shop-img{
+  width: 180px;
+  height: 200px;
+}
+.content-left{
+  width: 40%;
+}
+.contents-main{
+  display: flex;
+  flex-wrap: wrap;
+}
+.content{
+  border: rgba(0,0,0,.7) 1px solid;
+  display: flex;
+  padding: 16px;
+  color: black;
+  width: 30%;
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+// showhtml
+
+.shop-summary{
+  padding: 1.2rem;
+  border: solid rgba(0,0,0,.5) .5px;
+  border-radius: 3px;
+  height: 300px;
+  margin: 30px auto;
+  width: 90%;
+  text-align: center;
+}
+.shop-summary > p:first-child{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px auto 10px;
+}
+.shop-summary > div {
+  margin: 40px auto;
+  text-align: right;
+}
+.shop-summary>div>ul{
+  text-align: left; 
+  margin-left: auto; 
+  margin-right: 10%; 
+  width: 250px; 
+}
+.blue-horizon{
+  height: 3px;
+  border: none;
+  background-color: #4169e1;
+  margin-bottom: 10px;
+}
+#map {
+  height: 300px;
+  width: 90%;
+  margin: 30px auto 0;
+}
+.shop-img-show{
+  display: block;
+  margin: 0 auto 30px;
+  width: 90%;
+  height: 360px;
+}
+.show-content{
+  margin: 0 auto;
+}
+.show-main{
+  display: flex;
+  padding: 30px;
+}
+.show-main-right{
+  width: 70%;
+}
+.show-main-left{
+  width: 30%;
+}
+.clothes{
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cloth{
+  margin: 5px;
+  text-align: center;
+}
+.cloth-explation{
+  padding-top: 8px;
+}
+.cloth-explation p{
+  margin: 0;
+}
+.cloth-name{
+  font-size: 18px;
+}
+.delete,.edit{
+  color: rgba(0,0,0,.7);
+}
+.delete:hover,.edit:hover{
+  opacity: 0.7;
+  border-bottom: 1px solid rgba(0,0,0,.7);
+}
+.cloth-img{
+  width: 240px;
+  height: 310px;
+}
+
+
