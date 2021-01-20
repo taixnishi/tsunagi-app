@@ -1,23 +1,28 @@
-<header>
-  <nav class="white z-depth-2">
-    <div class="nav-wrapper">
-      <%= link_to "TSUNAGI", shops_path, class: "brand-logo grey-text text-darken-4"%>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger grey-text text-darken-4">
-        <i class="material-icons grey-text text-darken-4">menu</i>
-      </a>
-      <ul class="right hide-on-med-and-down nav-url">
-        <%= render "layouts/navilink" %>
-      </ul>
+<header class="header">
+    <div class="headerNavOuter">
+        <h1 class="siteIcon"><a href="#"><img class="logoimg"src="https://drive.google.com/uc?export=view&id=1mu_N2iTeoQCeUiuWRgJ0xwjR4AZ-29bL" alt="ロゴ画像"></a></h1>
+        <!-- ナビゲーション -->
+        <nav class="headerNav">
+            <ul class="navList">
+                <li class="navItem"><%= link_to "お店一覧", shops_path%></li>
+                <% if user_signed_in? %>
+                  <li class="navItem"><%= link_to  "投稿する", new_shop_path%></li>
+                  <li class="navItem"><%= link_to  "マイページ",user_path(current_user.id)%></li>
+                  <li class="navItem"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete%></li>
+                <% else %>
+                <li class="navItem"><%= link_to 'ログイン', new_user_session_path%></li>
+                <li class="navItem"><%= link_to 'サインアップ', new_user_registration_path%></li>
+                <% end %>
+            </ul>
+        </nav>
+        <!-- ハンバーガーボタン -->
+        <div class="hamburger_btn" id="js-hamburger">
+            <span class="hamburger_line hamburger_line_1"></span>
+            <span class="hamburger_line hamburger_line_2"></span>
+            <span class="hamburger_line hamburger_line_3"></span>
+        </div>
+        <!-- ハンバーガーメニュをクリックした後に現れる半透明の背景-->
+        <div class="black-bg" id="js-black-bg"></div>
     </div>
-  </nav>
 </header>
-
-<ul class="sidenav" id="mobile-demo">
-  <%= render "layouts/navilink" %>
-</ul>
-
-<script>
-  $(document).ready(function() {
-    $('.sidenav').sidenav();
-  });
-</script>
+<%= javascript_pack_tag 'header' %>

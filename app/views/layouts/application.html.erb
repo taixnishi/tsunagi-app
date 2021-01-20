@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Tsunagi</title>
-  <%= render 'layouts/default' %>
-</head>
-
-<body>
-  <%= render 'layouts/header' %>
-  <div class="wrap grey lighten-5">
-    <%= yield %>
-  </div>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= render 'layouts/footer' %>
-
-</body>
-
+  <head>
+    <title>Tsunagi</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="wrap">
+      <%= yield %>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/footer' %>
+  </body>
 </html>

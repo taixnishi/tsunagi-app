@@ -8,6 +8,8 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
+require("bootstrap");
+require("@fortawesome/fontawesome-free");
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -17,11 +19,11 @@ require("jquery")
 // const imagePath = (name) => images(name, true)
 
 //= require jquery3
-//= require materialize
-//= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
-import 'materialize-css/dist/js/materialize'
+
+
+
 
 
 
