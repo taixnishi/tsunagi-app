@@ -1,16 +1,17 @@
 <div class="container">
-  <h2>Log in</h2>
+  <p class="section-title">Login</p>
+  <p class="section-sub-title">ログイン</p>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field input-field col s12">
+  <div class="form-group">
     <i class="material-icons prefix">mail</i>
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email,"メールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control" %>
   </div>
 
-  <div class="field input-field col s12">
+  <div class="form-group">
     <i class="material-icons prefix">lock</i>
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :password,"パスワード" %><br />
+    <%= f.password_field :password, autocomplete: "current-password",class:"form-control" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -20,9 +21,8 @@
   </div>
   <% end %>
 
-  <button class="btn waves-effect waves-light" type="submit" name="action"><%= f.submit "Log in",class: "white-text"%>
-    <i class="material-icons right">send</i>
-  </button>
+    <%= f.submit "ログインする",class: "btn btn-primary"%>
   <% end %>
+<hr>
   <%= render "users/shared/links" %>
 </div>

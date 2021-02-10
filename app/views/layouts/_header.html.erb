@@ -1,13 +1,10 @@
 <header id="header" class="header">
     <div class="headerNavOuter">
-        <h1 class="siteIcon">
-            <%= link_to root_path do %>
-                <img class="logoimg"src="https://drive.google.com/uc?export=view&id=1mu_N2iTeoQCeUiuWRgJ0xwjR4AZ-29bL" alt="ロゴ画像">
-            <%end%>
-        </h1>
+        <li><%= link_to "TSUNAGI",root_path,class:"home" %></li>
         <!-- ナビゲーション -->
         <nav class="headerNav">
             <ul class="navList">
+                <li class="navItem"><%= link_to "トップ画面", root_path%></li>
                 <li class="navItem"><%= link_to "お店一覧", shops_path%></li>
                 <% if user_signed_in? %>
                     <li class="navItem"><%= link_to  "投稿する", new_shop_path%></li>

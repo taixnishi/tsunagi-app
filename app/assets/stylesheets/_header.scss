@@ -1,8 +1,19 @@
-.logoimg{
-    width: 60px;
-    height: 60px;
-    vertical-align: bottom;
-}  
+li{
+    list-style: none;
+}
+.home{
+    color: #333333;
+    text-align: center;
+    line-height: 54px;
+    margin-left: 20px;
+    font-size: 24px;
+    font-family: 'Arbutus Slab', serif;
+}
+.home:hover{
+    text-decoration: none;
+    color: #333333;
+    opacity: 0.7;
+}
 .header {
     width: 100%;
     position: fixed;
@@ -21,10 +32,7 @@
 .siteIcon {
     margin: 0;
 }
-.siteIcon img {
-    width: 60px;
-    height: 60px
-}
+
 /* Start ナビゲーション */
 .headerNav {
     position: fixed;
@@ -139,7 +147,10 @@ End ハンバーガーメニュー
 ----------------------
 */
 @media screen and (min-width: 768px) {
-    // （ここにPC用スタイルを記述）
+    .home{
+        line-height: 64px;
+        font-size: 34px;
+    }
     .header{
         height: 64px;
     }
@@ -172,6 +183,9 @@ End ハンバーガーメニュー
 
 }
 
-@media only screen and (min-width: 767px) and (max-width: 1280px) {
-    // （ここにタブレット用スタイルを記述）
+@media only screen and (min-width: 1200px) {
+    .home{
+        font-size: 38px;
+        margin-left: 40px;
+    }
 }

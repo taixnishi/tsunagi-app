@@ -14,6 +14,7 @@
     font-size: 12px;
     padding: 5px;
   }
+
   // create-btn######################################
   .create-btn {
     text-align: center;
@@ -120,9 +121,17 @@
     margin: 0 auto;
     text-align: center;
   }
-  .content-summary > p:first-child{
-    color: black;
+  .shop-name{
+    color: rgba(0,0,0,.7);
+    margin-bottom: 0;
     font-weight: bold;
+  }
+  .shop-name:hover{
+    text-decoration: none;
+    color: rgba(0,0,0,.7);
+    opacity: 0.7;
+  }
+  .content-summary > p:first-child{
     margin-bottom: 0;
   }
   .content-summary>div>ul{
@@ -142,7 +151,7 @@
     margin-top: 5px;
   }
   .shop-img{
-    width: 140px;
+    width: 100%;
     height: 100px;
     // width: 100%; 1列
     // height: 200px;　1列
@@ -151,19 +160,23 @@
   .contents-main{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   .content{
     border: rgba(0,0,0,.1) 1px solid;
     color: black;
     min-height: 246px;
     margin: 0 5px 20px;
-    padding: 5px; 
+    // padding: 5px; 
     width: 47%;
     // padding: 10px; 1列
     // width: 95%; 1列
   }
   .content-right{
     text-align: center;
+  }
+  .content-left{
+    padding: 5px;
   }
   // indexhtml　終わり
 
@@ -220,7 +233,7 @@
     display: none;
   }
   #modal.modal-hidden{
-    transform: translate(0, -500px);
+    transform: translate(0, -1000px);
   }
   // 
   .shop-summary{
@@ -333,15 +346,17 @@
   // indexhtml
 
   .shop-img{
-    width: 180px;
+    width: 100%;
     height: 150px;
   }
   .contents-main{
     justify-content: space-between;
   }
-
+  .content-left{
+    padding: 5px;
+  }
   .content{
-    padding: 8px;
+    // padding: 8px;
     width: 31%;
   }
   .content-summary > p:first-child{
@@ -458,21 +473,19 @@
   
     // （ここにPC用スタイルを記述）
 }
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1200px) {
 // index
-.container{
-  max-width: 1200px;
-}
+
     .content{
       border: rgba(0,0,0,.1) 1px solid;
       display: flex;
-      padding: 5px;
+      // padding: 5px;
       width: 32%;
-
     }
     .shop-img{
-      width: 180px;
-      height: 220px;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle
     }
     .content-right{
       width: 55%;
@@ -481,11 +494,14 @@
       width: 44%;
       padding: 2px;
     }
+    .shop-img-show{
+      height: 400px;
+    }
 }
 
-@media only screen and (max-width: 375px){
+@media only screen and (max-width: 374px){
   .shop-img{
-    width: 120px;
+    width: 100%;
   }
   .content{
     margin: 10px auto;

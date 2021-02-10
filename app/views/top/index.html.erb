@@ -1,4 +1,4 @@
-<div id="js-scroll-top" class="scroll-top">TOP</div>
+<div id="js-scroll-top" class="scroll-top"><span class="arrow-top"></span></div>
 <div class="top-img">
   <div class="row">
     <div class="col s12 top-txt">
@@ -18,7 +18,7 @@
           </div>
           <div class="content-left">
             <div class="content-summary">
-              <p><%= link_to shop.name, shop_path(shop.id)%></p>
+              <p><%= link_to shop.name, shop_path(shop.id),class: "shop-name"%></p>
               <hr class="blue-horizon" size="10" width="100%" noshade/>
               <div>
                 <ul class="store-data">

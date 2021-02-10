@@ -1,3 +1,4 @@
+  <div class="container">
   <div class="show-main">
     <!---->
   <!---------------------------------------------------------------------------------------------------------------->
@@ -24,12 +25,12 @@
             <%= image_tag cloth.image_url,class:"cloth-img" if cloth.image? %>
             <div class="cloth-explation">
               <p class="cloth-name"><%= cloth.cloth_name %></p>
-              <p class="cloth-genre"><%= cloth.cloth_name %></p>
+              <p class="cloth-genre"><%= cloth.cloth_contents %></p>
             </div>
             <%= link_to shop_cloth_path(@shop,cloth.id), method: :delete ,class: "delete show-btn" do %>
               <i class="far fa-trash-alt"></i>削除
             <% end %>
-            /<%= link_to shop_cloth_path(@shop,cloth.id), method: :delete ,class: "edit show-btn" do %>
+            /<%= link_to "#",class: "edit show-btn" do %>
               <i class="far fa-trash-alt"></i>編集
             <% end %>
             <hr>
@@ -59,6 +60,7 @@
       </div>
     </div>
   </div>
+  </div>
 
 
 
@@ -75,15 +77,16 @@
   </div>
   <div id="modal-mask" class="modal-hidden"></div>
   <section id="modal" class="modal-hidden">
-    <p>洋服を追加する</p>
+    <p class="section-title">Add Cloth</p>
+    <p class="section-sub-title">洋服を追加する</p>
     <%= form_with(model:[@shop, @cloth], method: :post) do |f| %>
     <div class="form-group">
-      <%= f.label :'服の名前' %>
-      <%= f.text_area :cloth_name,class:"form-control" %>
+      <%= f.label :cloth_name,'服の名前' %>
+      <%= f.text_field :cloth_name,class:"form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :'服の説明' %>
-      <%= f.text_area :cloth_contents,class:"form-control" %>
+      <%= f.label :cloth_contents, 'ジャンル' %>
+      <%= f.text_field :cloth_contents,class:"form-control" %>
     </div>
     <div class="form-group">
       <%= f.file_field :image %>

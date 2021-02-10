@@ -1,4 +1,4 @@
-<div id="js-scroll-top" class="scroll-top">TOP</div>
+<div id="js-scroll-top" class="scroll-top"><span class="arrow-top"></span></div>
 <div class="container">
   <p class="section-title">ALL SHOPS</p>
   <p class="section-sub-title">全てのお店</p>
@@ -10,7 +10,7 @@
           </div>
           <div class="content-left">
             <div class="content-summary">
-              <p><%= link_to shop.name, shop_path(shop.id)%></p>
+              <p><%= link_to shop.name, shop_path(shop.id),class: "shop-name"%></p>
               <hr class="blue-horizon" size="10" width="100%" noshade/>
               <div>
                 <ul class="store-data">
@@ -32,5 +32,6 @@
   <div class="create-btn">
     <%= link_to '新しく投稿する', new_shop_path ,class: "arrow_r"%>
   </div>
+
 </div>
 <%= javascript_pack_tag "scroll" %>

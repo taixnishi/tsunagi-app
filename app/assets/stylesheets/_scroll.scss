@@ -3,7 +3,7 @@
     right: 20px;
     bottom: 25px;
     z-index: 100;
-    background-color: #537791;
+    background-color: #4169e1;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -13,7 +13,17 @@
   }
   .scroll-top:hover {
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.3;
+  }
+  // 矢印
+  .arrow-top {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    border-top: 4px solid #fff;
+    border-left: 4px solid #fff;
+    transform: rotate(45deg);
   }
   
   .js-scroll-top{
