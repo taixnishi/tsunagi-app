@@ -9,16 +9,12 @@
     </div>
     <div class="user-info-right">
       <p><%= current_user.username %></p>
-      <p>mail: <%= current_user.email %></p>
       <% if current_user.id == @user.id %>
       <%= link_to "ユーザー情報を編集する", edit_user_registration_path %>
       <% end %>
     </div>
   </div>
   <hr class="bar">
-
-
-  <%= link_to "一覧に戻る", shops_path %>
 </div>
   <section>
     <ul class="tab">
@@ -30,7 +26,7 @@
       <li class="active">
         <% @shops.each do |shop| %>
           <div class="show-shops">
-              <%= image_tag shop.image_url, class:"shop-img" if shop.image? %>
+              <%= image_tag shop.image_url, class:"shop-img-user" if shop.image? %>
               <div class="show-shop-summaury">
                 <p><%= link_to  shop.name, shop_path(shop.id) %></p>
               </div>

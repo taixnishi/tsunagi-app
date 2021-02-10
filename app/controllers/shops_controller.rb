@@ -4,6 +4,8 @@ class ShopsController < ApplicationController
   before_action :set_find, only: [:show, :edit,:update,:destroy]
   def index
     @shops = Shop.all
+    # 最新の投稿を6件取得
+    @latest_shops = Shop.order(created_at: :desc).limit(6)
   end
 
   def new

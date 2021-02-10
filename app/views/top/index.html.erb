@@ -1,12 +1,62 @@
+<div id="js-scroll-top" class="scroll-top">TOP</div>
 <div class="top-img">
   <div class="row">
     <div class="col s12 top-txt">
-      <h4 class="txt">あなただけの古着屋を見つけよう</h4>
-      <h6 class="txt">全国の古着検索＆紹介アプリ</h6>
+      <p class="txt main-txt">あなただけの古着屋を見つけよう</h4>
+      <p class="txt sub-txt">全国の古着検索＆紹介アプリ</h6>
     </div>
   </div>
 </div>
-
-
-
-
+<div class="container">
+  <p class="section-title">New Posts</p>
+  <p class="section-sub-title">最新の投稿</p>
+  <div class="contents-main">
+    <% @latest_shops.each do |shop| %>
+      <div class="content">
+          <div class="content-right">
+            <%= image_tag shop.image_url, class:"shop-img" if shop.image? %>
+          </div>
+          <div class="content-left">
+            <div class="content-summary">
+              <p><%= link_to shop.name, shop_path(shop.id)%></p>
+              <hr class="blue-horizon" size="10" width="100%" noshade/>
+              <div>
+                <ul class="store-data">
+                  <li><p>サンプル</p></li>
+                  <li><p>場所サンプル</p></li>
+                </ul>
+              </div>
+            </div>
+            <!--<div class="user">
+              <% if shop.user.image? %>
+                <%= image_tag shop.user.image.url ,class: "user_shop_img"%>
+              <% else %>
+                <%= image_tag "user.png" ,class: "default_user_shop_img"%>
+              <%end%>
+              <p class="username"><%=link_to shop.user.username, user_path(shop.user.id) %></p>
+            </div>-->
+              <%= link_to shop_path(shop.id), method: :delete, class: "delete" do %>
+                <i class="far fa-trash-alt"></i>削除
+              <% end %>
+              /<%= link_to edit_shop_path(shop.id),class: "edit" do %>
+                <i class="far fa-edit"></i>編集
+              <% end %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="create-btn">
+    <%= link_to '新しく投稿する', new_shop_path ,class: "arrow_r"%>
+  </div>
+  <p class="section-title area-serach">AREA SEARCH</p>
+  <p class="section-sub-title sub-area-serach">場所で検索</p>
+  <div class="contents-area">
+    <div class="area tokyo"></div>
+    <div class="area osaka"></div>
+    <div class="area kyoto"></div>
+  </div>
+  <div class="create-btn area-btn">
+    <%= link_to 'その他のエリア', "#" ,class: "arrow_r"%>
+  </div>
+</div>
+<%= javascript_pack_tag "scroll" %>

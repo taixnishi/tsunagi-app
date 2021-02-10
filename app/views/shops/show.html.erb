@@ -4,30 +4,45 @@
     <div class="show-main-right">
       <%= image_tag @shop.image_url, class:"shop-img-show" if @shop.image? %>  
       
-      <div class="clothes">
-      <% @cloths.each do |cloth| %>
-        <div class="cloth">
-          <%= image_tag cloth.image_url,class:"cloth-img" if cloth.image? %>
-          <div class="cloth-explation">
-            <p class="cloth-name"><%= cloth.cloth_name %></p>
-            <p><%= cloth.cloth_name %></p>
+      <div class="shop-info">
+        <div class="shop-summary">
+          <p><%= @shop.name%></p>
+          <hr class="blue-horizon" size="10" width="70%" noshade/>
+          <div>
+            <ul class="shop-data">
+              <li><p>住所: <%= @shop.address %></p></li>
+              <li><p>ジャンル: <%= @shop.genre %></p></li>
+              <li><p>内容: <%= @shop.content %></p></li>
+            </ul>
           </div>
-          <%= link_to shop_cloth_path(@shop,cloth.id), method: :delete ,class: "delete" do %>
-            <i class="far fa-trash-alt"></i>削除
-          <% end %>
-          /<%= link_to shop_cloth_path(@shop,cloth.id), method: :delete ,class: "delete" do %>
-            <i class="far fa-trash-alt"></i>編集
-          <% end %>
-          <hr>
         </div>
-      <% end %>
       </div>
+      <p class="shop-cloth-title">お店の洋服</p>
+      <div class="clothes">
+        <% @cloths.each do |cloth| %>
+          <div class="cloth">
+            <%= image_tag cloth.image_url,class:"cloth-img" if cloth.image? %>
+            <div class="cloth-explation">
+              <p class="cloth-name"><%= cloth.cloth_name %></p>
+              <p class="cloth-genre"><%= cloth.cloth_name %></p>
+            </div>
+            <%= link_to shop_cloth_path(@shop,cloth.id), method: :delete ,class: "delete show-btn" do %>
+              <i class="far fa-trash-alt"></i>削除
+            <% end %>
+            /<%= link_to shop_cloth_path(@shop,cloth.id), method: :delete ,class: "edit show-btn" do %>
+              <i class="far fa-trash-alt"></i>編集
+            <% end %>
+            <hr>
+          </div>
+        <% end %>
+      </div>
+
     </div>
 
     <div class="show-content show-main-left">
     <!---->
       <div class="shop-info">
-        <div class="shop-summary">
+        <!--<div class="shop-summary">
           <p><%= @shop.name%></p>
           <hr class="blue-horizon" size="10" width="70%" noshade/>
           <div>
@@ -37,29 +52,52 @@
             <li><p>住所: <%= @shop.address %></p></li>
           </ul>
           </div>
-        </div>
+        </div>-->
+        <p class="map-info">Map</p>
+        <p class="map-info-sub">お店の場所</p>
         <div id="map" class="shop-map"></div>
       </div>
     </div>
   </div>
 
 
+
   <!-- -->
-  <div class="postuser-info">
+  <!--<div class="postuser-info">
     <p><span>投稿者: </span><%= @user.username %></p> 
     <p>作成日: <%= @shop.created_at %></p>
-  </div>
   <%= link_to "一覧に戻る", shops_path %>
+  </div>-->
+
   <!-- -->
+  <div id="modal-open">
+    ＋
+  </div>
+  <div id="modal-mask" class="modal-hidden"></div>
+  <section id="modal" class="modal-hidden">
+    <p>洋服を追加する</p>
+    <%= form_with(model:[@shop, @cloth], method: :post) do |f| %>
+    <div class="form-group">
+      <%= f.label :'服の名前' %>
+      <%= f.text_area :cloth_name,class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :'服の説明' %>
+      <%= f.text_area :cloth_contents,class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.file_field :image %>
+    </div>
+    <div class="form-group">
+      <%= f.submit '服を追加する',class: "btn btn-primary"%>
+    </div>
+    <% end %>
+    <div id="modal-close">
+      閉じる
+    </div>
+  </section>
   <!--form -->
-  <%= form_with(model:[@shop, @cloth], method: :post) do |f| %>
-    <%= f.label :'服の名前' %>
-    <%= f.text_area :cloth_name %>
-    <%= f.label :'服の説明' %>
-    <%= f.text_area :cloth_contents %>
-    <%= f.file_field :image %>
-    <%= f.submit '服を追加する' %>
-  <% end %>
+
   <!--form -->
 <!------------------------------------------------------------------------------------------------------------------>
 
@@ -94,6 +132,7 @@
     });
   }
 </script>
+<%= javascript_pack_tag 'shops/show' %>
 <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"></script>-->
 <!--data-turbolinks-eval="false"-->
 <!------------------------------------------------------------------------------------------------------------------>

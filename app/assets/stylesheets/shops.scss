@@ -1,5 +1,19 @@
 
   // 共通
+  .delete,.edit{
+    color: rgba(0,0,0,.7);
+    text-decoration: none;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .delete:hover,.edit:hover{
+    opacity: 0.7;
+    border-bottom: 1px solid rgba(0,0,0,.7);
+  }
+  .show-btn{
+    font-size: 12px;
+    padding: 5px;
+  }
   // create-btn######################################
   .create-btn {
     text-align: center;
@@ -12,9 +26,9 @@
     color: #fff;
     border: #000 2px solid;
     text-decoration: none;
-    width: 200px;
-    height: 35px;
-    line-height: 35px;
+    width: 250px;
+    height: 45px;
+    line-height: 45px;
     transition: all 0.3s;
   }
   .arrow_r:before {
@@ -39,7 +53,7 @@
     border-top: solid 2px #000;
     border-right: solid 2px #000;
   }
-// ###############################
+// indexhtml###############################
   .section-title{
     font-size: 2rem;
     font-weight: 600;
@@ -51,7 +65,7 @@
     text-align: center;
     margin: 0px 0px 10px;
   }
-  // ####################################
+  
   .user_shop_img,.default_user_shop_img{
     width: 30px;
     height: 30px;
@@ -63,15 +77,20 @@
   .username{
     margin-left: 10px;
   }
-  // ############################################3
+
   .contents-area{
+    margin-top: 10px;
+    margin-bottom: 20px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
   .area{
-    margin: 20px;
-    height: 300px;
+    width: 32%;
+    height: 150px;
     text-align: center;
     vertical-align: middle;
+    border: #000 1px solid;
   }
   .area-serach{
     margin-top: 20px;
@@ -96,7 +115,8 @@
   //   text-align: center;
   // }
   .content-summary{
-    padding: 20px;
+    // padding: 20px;　1列表示
+    padding: 10px;
     margin: 0 auto;
     text-align: center;
   }
@@ -122,71 +142,214 @@
     margin-top: 5px;
   }
   .shop-img{
-    width: 300px;
-    height: 200px;
+    width: 140px;
+    height: 100px;
+    // width: 100%; 1列
+    // height: 200px;　1列
+  }
+  // 二列表示するなら
+  .contents-main{
+    display: flex;
+    flex-wrap: wrap;
   }
   .content{
-    border: rgba(0,0,0,.7) 1px solid;
-    padding: 5px;
+    border: rgba(0,0,0,.1) 1px solid;
     color: black;
+    min-height: 246px;
+    margin: 0 5px 20px;
+    padding: 5px; 
+    width: 47%;
+    // padding: 10px; 1列
+    // width: 95%; 1列
+  }
+  .content-right{
+    text-align: center;
+  }
+  // indexhtml　終わり
+
+  // showhtml
+  // modal
+  #modal-open{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  #modal-close{
+    width: 100px;
+  }
+  #modal-open,
+  #modal-close {
+    cursor: pointer;
+    text-align: center;
+    padding: 12px;
+    margin: 16px auto 0;
+    background: #4169e1;
+    color: white;
+  }
+  #modal-mask{
+    background: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+  }
+  #modal{
+    background: #fff;
+    color: #555;
+    width: 90%;
+    padding: 20px;
+    border-radius: 4px;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 101;
+    transition: 0.5s;
+  }
+  #modal p {
+    margin: 0 0 20px;
+  }
+  #modal-mask.modal-hidden{
+    display: none;
+  }
+  #modal.modal-hidden{
+    transform: translate(0, -500px);
+  }
+  // 
+  .shop-summary{
+    padding: 5px;
+    border: solid rgba(0,0,0,.1) 1px;
+    margin: 0px auto;
+    width: 90%;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+  }
+
+  .shop-summary > p:first-child{
+    font-weight: bold;
+    margin: 5px auto;
+  }
+
+  .shop-summary > div > ul {
+    font-size: 14px;
+  }
+  .shop-summary > div > ul > li > p {
+    margin-bottom: 1px;
+  }
+
+  .blue-horizon{
+    height: 3px;
+    border: none;
+    background-color: #4169e1;
+    margin-bottom: 10px;
+  }
+
+  .shop-cloth-title{
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.5);
+  }
+  .map-info,
+  .map-info-sub{
+    text-align: center;
+    margin: 0;
+  }
+  .map-info{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  #map {
+    height: 300px;
+    width: 90%;
+    margin: 10px auto 0;
+  }
+  .shop-img-show{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    height: 200px;
+  }
+  .show-content{
+    margin: 0 auto;
+  }
+  .show-main-right{
+    margin-top: 20px;
+    // width: 70%;
+  }
+  // .show-main-left{
+  //   // width: 30%;
+  // }
+  .clothes{
+    display: flex;
     width: 95%;
-    margin: 10px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .cloth{
+    margin: 2px;
+    text-align: center;
+    width: 48%;
+    min-height: 268px;
+  }
+  .cloth-explation p{
+    margin: 0;
+  }
+  .cloth-name{
+    font-size: 18px;
+  }
+
+  .cloth-img{
+    width: 130px;
+    height: 160px;
   }
 
 @media screen and (min-width: 768px) {
   // create-btn######################################
   .arrow_r {
-    padding-left: 20px;
+    padding-left: 10px;
     width: 382px;
-    height: 45px;
-    line-height: 45px;
+    height: 52px;
+    line-height: 52px;
     font-weight: bold;
+    font-size: 1.2rem;
   }
   // ##############################################
+
+  #modal-open{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    line-height: 45px;
+  }
   // indexhtml
-  .section-title{
-    font-size: 2.8rem;
-    font-weight: 600;
-    margin: 20px auto 0;
-  }
-  .section-sub-title{
-    font-size: 1.2rem;
-    margin: 5px 0px 30px;
-  }
 
-  .contents-area{
-    display: flex;
+  .shop-img{
+    width: 180px;
+    height: 150px;
+  }
+  .contents-main{
     justify-content: space-between;
-    width: 100%;
-  }
-  .area{
-    width: 30%;
-    margin: 20px;
-    height: 300px;
-    text-align: center;
-    vertical-align: middle;
-  }
-  .area-serach{
-    margin-top: 50px;
   }
 
-  .area-btn{
-  margin-top: 40px;
+  .content{
+    padding: 8px;
+    width: 31%;
   }
-
-  // .content-title{
-  //   text-align: center;
-  // }
-  // .content-summary{
-  //   padding: 1.1rem;
-  //   margin: 0 auto;
-  //   text-align: center;
-  // }
   .content-summary > p:first-child{
-    margin: 20px auto 10px;
+    margin: 5px auto;
+    font-size: 1.1rem;
   }
   .content-summary > div {
-    margin: 40px auto;
+    margin: 15px auto;
     text-align: right;
   }
   .content-summary>div>ul{
@@ -195,103 +358,62 @@
     margin-right: 10%; 
     width: auto; 
   }
+  .store-data>li{
+    margin: 5px;
+  }
 
   .blue-horizon{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
-  .shop-img{
-    width: 180px;
-    height: 200px;
-  }
-  .contents-main{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .content-right{
-    width: 60%;
-    border: rgba(0,0,0,.7) 1px solid;
-  }
-  .content-left{
-    width: 40%;
-  }
-  .content{
-    border: rgba(0,0,0,.7) 1px solid;
-    display: flex;
-    padding: 16px;
-    width: 30%;
-    margin-left: 30px;
-    margin-bottom: 40px;
-  }
-
-  // showhtml
-
-  .shop-summary{
-    padding: 1.2rem;
-    border: solid rgba(0,0,0,.5) .5px;
-    border-radius: 3px;
-    height: 300px;
-    margin: 30px auto;
-    width: 90%;
-    text-align: center;
-  }
-  .shop-summary > p:first-child{
-    font-size: 20px;
+  
+  .section-title{
+    font-size: 2.8rem;
     font-weight: bold;
-    margin: 20px auto 10px;
+    margin: 8px auto 0;
   }
-  .shop-summary > div {
-    margin: 40px auto;
-    text-align: right;
+  .section-sub-title{
+    font-size: 1.6rem;
+    margin: 0px 0px 20px;
   }
-  .shop-summary>div>ul{
-    text-align: left; 
-    margin-left: auto; 
-    margin-right: 10%; 
-    width: 250px; 
+
+  .contents-area{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0;
   }
-  .blue-horizon{
-    height: 3px;
-    border: none;
-    background-color: #4169e1;
+  .area{
+    width: 32%;
+    margin: 15px;
+    height: 300px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .area-serach{
+    margin-top: 30px;
+  }
+  .sub-area-serach{
     margin-bottom: 10px;
   }
-  #map {
-    height: 300px;
-    width: 90%;
-    margin: 30px auto 0;
+
+  .area-btn{
+  margin-top: 20px;
   }
+
+
+  
+  // """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  // // showhtml
+  
   .shop-img-show{
-    display: block;
-    margin: 0 auto 30px;
-    width: 90%;
-    height: 360px;
-  }
-  .show-content{
-    margin: 0 auto;
-  }
-  .show-main{
-    display: flex;
-    padding: 30px;
-  }
-  .show-main-right{
-    width: 70%;
-  }
-  .show-main-left{
-    width: 30%;
+    height: 300px;
   }
   .clothes{
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    width: 100%;
   }
   .cloth{
-    margin: 5px;
-    text-align: center;
-  }
-  .cloth-explation{
-    padding-top: 8px;
+    width: 32%;
+    min-height: 323px;
   }
   .cloth-explation p{
     margin: 0;
@@ -299,19 +421,136 @@
   .cloth-name{
     font-size: 18px;
   }
-  .delete,.edit{
-    color: rgba(0,0,0,.7);
-  }
-  .delete:hover,.edit:hover{
-    opacity: 0.7;
-    border-bottom: 1px solid rgba(0,0,0,.7);
-  }
+
   .cloth-img{
-    width: 240px;
-    height: 310px;
+    width: 160px;
+    height: 200px;
   }
+  .map-info{
+    font-size: 2.8rem;
+  }
+  .map-info-sub{
+    font-size: 1.6rem;
+  }
+  .shop-summary{
+    padding: 1.2rem;
+    border: solid rgba(0,0,0,.1) 1px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  .shop-summary > p:first-child{
+    font-size: 1.5rem;
+  }
+  .shop-data>li{
+    font-size: 1.2rem;
+    margin: 7px;
+  }
+  .show-btn{
+    font-size: 1rem;
+    padding: 5px;
+  }
+  .cloth-name{
+    font-size: 1.6rem;
+  }
+  .cloth-genre{
+    font-size: 1.2rem;
+  }
+  
     // （ここにPC用スタイルを記述）
 }
-@media only screen and (min-width: 767px) and (max-width: 1280px) {
-    // （ここにタブレット用スタイルを記述）
+@media only screen and (min-width: 1280px) {
+// index
+.container{
+  max-width: 1200px;
 }
+    .content{
+      border: rgba(0,0,0,.1) 1px solid;
+      display: flex;
+      padding: 5px;
+      width: 32%;
+
+    }
+    .shop-img{
+      width: 180px;
+      height: 220px;
+    }
+    .content-right{
+      width: 55%;
+    }
+    .content-left{
+      width: 44%;
+      padding: 2px;
+    }
+}
+
+@media only screen and (max-width: 375px){
+  .shop-img{
+    width: 120px;
+  }
+  .content{
+    margin: 10px auto;
+  }
+}
+.delete,.edit{
+  font-size: 12px;
+}
+
+// show
+
+// .shop-summary > div {
+  //   margin: 40px auto;
+  //   text-align: right;
+  // }
+  // .shop-summary>div>ul{
+  //   text-align: left; 
+  //   margin-left: auto; 
+  //   margin-right: 10%; 
+  //   width: 250px; 
+  // }
+  // .blue-horizon{
+  //   height: 3px;
+  //   border: none;
+  //   background-color: #4169e1;
+  //   margin-bottom: 10px;
+  // }
+  // #map {
+  //   height: 300px;
+  //   width: 90%;
+  //   margin: 30px auto 0;
+  // }
+  // .shop-img-show{
+  //   display: block;
+  //   margin: 0 auto 30px;
+  //   width: 90%;
+  //   height: 360px;
+  // }
+  // .show-content{
+  //   margin: 0 auto;
+  // }
+  // .show-main{
+  //   display: flex;
+  //   padding: 30px;
+  // }
+  // .show-main-right{
+  //   width: 70%;
+  // }
+  // .show-main-left{
+  //   width: 30%;
+  // }
+  // .clothes{
+  //   display: flex;
+  //   width: 90%;
+  //   margin: 0 auto;
+  //   justify-content: space-between;
+  //   flex-wrap: wrap;
+  // }
+  // .cloth{
+  //   margin: 5px;
+  //   text-align: center;
+  // }
+  // .cloth-explation{
+  //   padding-top: 8px;
+  // }
+  // .cloth-explation p{
+  //   margin: 0;
+  // }

@@ -140,10 +140,38 @@ End ハンバーガーメニュー
 */
 @media screen and (min-width: 768px) {
     // （ここにPC用スタイルを記述）
+    .header{
+        height: 64px;
+    }
+    .headerNav{
+        right: -300px;/*右側に隠しておきます*/
+        width: 300px;
+    }
+    .navItem a{
+        font-size: 1.2rem;
+    }
+    /* Start ハンバーガーボタン(三本線の実装) */
+.hamburger_btn {
+    width: 60px;
+    height: 60px;
 }
-@media screen and (max-width: 767px) {
-    // （ここにモバイル用スタイルを記述）
+.hamburger_line {
+    left: -10px;
+    width: 38px;
 }
+.hamburger_line_1 {
+    top: 18px;
+}
+.hamburger_line_2 {
+    top: 28px;
+}
+.hamburger_line_3 {
+    top: 36px;
+}
+/* End ハンバーガーボタン(三本線の実装) */
+
+}
+
 @media only screen and (min-width: 767px) and (max-width: 1280px) {
     // （ここにタブレット用スタイルを記述）
 }
