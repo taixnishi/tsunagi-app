@@ -79,7 +79,7 @@
   <section id="modal" class="modal-hidden">
     <p class="section-title">Add Cloth</p>
     <p class="section-sub-title">洋服を追加する</p>
-    <%= form_with(model:[@shop, @cloth], method: :post) do |f| %>
+    <%= form_with(model:[@shop, @cloth]) do |f| %>
     <div class="form-group">
       <%= f.label :cloth_name,'服の名前' %>
       <%= f.text_field :cloth_name,class:"form-control" %>
