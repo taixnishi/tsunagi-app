@@ -1,7 +1,22 @@
 <header id="header" class="header">
     <div class="headerNavOuter">
-        <li><%= link_to "TSUNAGI",root_path,class:"home" %></li>
-        <!-- ナビゲーション -->
+        <li class="#"><%= link_to "TSUNAGI",root_path,class:"home" %></li>
+        <!-- pcナビゲーション -->
+        <nav class="pc-headerNav">
+            <ul class="pc-navList">
+                <li class="pc-navItem"><%= link_to "トップ画面", root_path,class:"pc-navColor"%></li>
+                <li class="pc-navItem"><%= link_to "お店一覧", shops_path,class:"pc-navColor"%></li>
+                <% if user_signed_in? %>
+                    <li class="pc-navItem"><%= link_to  "投稿する", new_shop_path,class:"pc-navColor"%></li>
+                    <li class="pc-navItem"><%= link_to  "マイページ",user_path(current_user.id),class:"pc-navColor"%></li>
+                    <li class="pc-navItem"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class:"pc-navColor"%></li>
+                <% else %>
+                <li class="pc-navItem"><%= link_to 'ログイン', new_user_session_path,class:"pc-navColor"%></li>
+                <li class="pc-navItem"><%= link_to 'サインアップ', new_user_registration_path,class:"pc-navColor"%></li>
+                <% end %>
+            </ul>
+        </nav>
+        <!-- スマホナビゲーション -->
         <nav class="headerNav">
             <ul class="navList">
                 <li class="navItem"><%= link_to "トップ画面", root_path%></li>

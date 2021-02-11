@@ -33,6 +33,10 @@ li{
     margin: 0;
 }
 
+.pc-headerNav{
+    display: none;
+}
+
 /* Start ナビゲーション */
 .headerNav {
     position: fixed;
@@ -181,6 +185,43 @@ End ハンバーガーメニュー
 }
 /* End ハンバーガーボタン(三本線の実装) */
 
+}
+
+@media only screen and (min-width: 1024px) {
+    .headerNav{
+        display: none;
+    }
+    .hamburger_btn{
+        display: none;
+    }
+    .pc-headerNav{
+        display: block;
+    }
+    .pc-navList{
+        display: flex;
+    }
+    .headerNavOuter{
+        display: flex;
+        justify-content: space-between;
+    }
+    .pc-navColor{
+        color: #333333;
+        font-size: 1rem
+    }
+    .pc-navItem{
+        height: 64px;
+        line-height: 64px;
+        margin-right: 20px;
+        width: 85px;
+        text-align: center;
+    }
+    .pc-navItem:hover{
+        border-bottom: 2px solid rgba(0,0,0,0.7);
+    }
+    .pc-navColor:hover{
+        text-decoration: none;
+        color: #000;
+    }
 }
 
 @media only screen and (min-width: 1200px) {

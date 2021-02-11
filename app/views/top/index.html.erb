@@ -22,7 +22,7 @@
               <hr class="blue-horizon" size="10" width="100%" noshade/>
               <div>
                 <ul class="store-data">
-                  <li><p>サンプル</p></li>
+                  <li><p><%= shop.genre%></p></li>
                   <li><p>場所サンプル</p></li>
                 </ul>
               </div>
@@ -46,7 +46,7 @@
     <% end %>
   </div>
   <div class="create-btn">
-    <%= link_to '新しく投稿する', new_shop_path ,class: "arrow_r"%>
+    <%= link_to '全てのお店を見る', shops_path ,class: "arrow_r"%>
   </div>
   <p class="section-title area-serach">AREA SEARCH</p>
   <p class="section-sub-title sub-area-serach">場所で検索</p>
