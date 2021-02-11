@@ -8,6 +8,14 @@
 // color: #333;
 // text-decoration: none;
 // }
+.user-edit{
+    color: rgba(0,0,0,.7);
+    font-size: 14px;
+}
+.user-edit:hover{
+    text-decoration: none;
+    color: rgba(0,0,0,.5);
+}
 .user_img,.default_user_img{
     width: 72px;
     height: 72px;
@@ -36,29 +44,35 @@
     border: 0; 
 }
 .show-shops{
-    width: auto;
-    border: black solid 1px;
+    width: 33%;
     text-align: center;
-    margin: 5px 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
-.show-shop-summaury{
-    text-align: center;
+.show-shops:hover{
+    transform: scale(0.99);
 }
+// .show-shop-summaury{
+//     text-align: center;
+// }
 .shop-img-user{
-    width: 120px;
+    width: 100%;
     height: 100px;
 }
+
 // tab
 section{
     width: auto;
     max-width: 1000px;
-    margin: 50px auto;
+    // margin: 50px auto;
 }
 .tab{
     display: flex;
+    justify-content: space-between;
 }
 .tab li{
-    width: 20%;
+    width: 33.3%;
+
 }
 .tab li a{
     display: flex;
@@ -68,30 +82,41 @@ section{
     color: black;
     background-color: #fff;
     transition: 0.3s;
-    border: black 1px solid;
+    border-top:2px solid #ddd;
+    border-bottom:2px solid #ddd;
+    font-size: 12px;
 }
-
-@media screen and (min-width: 769px){
-    .tab li a:not(.active):hover{
-        opacity: 0.7;
-    }
+.tab li a:hover{
+    text-decoration: none;
 }
 .tab li a.active{
-    background-color: #bbb;
+    border-bottom:2px solid #000;
+    transition: all 0.6s;
 }
 .contents,ul.tab{
     margin: 0;
 }
 .contents li {
     background-color: #fff;
-    padding: 20px;
+    // padding: 20px;
     display: none;
     min-height: 300px;
-    border: black solid 1px;
+    // border: black solid 1px;
 }
 .contents li.active{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+// @media screen and (min-width: 769px){
+
+// }
+@media screen and (min-width: 769px){
+    .tab li a:not(.active):hover{
+        opacity: 0.7;
+    }
+
 }
 // tabここまで
 
@@ -139,9 +164,9 @@ section{
     
     // tab
     section{
-        width: auto;
+        // width: auto;
         max-width: 1000px;
-        margin: 50px auto;
+        // margin: 50px auto;
     }
     .tab{
         display: flex;

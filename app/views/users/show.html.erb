@@ -1,20 +1,20 @@
-<div class="container">
+<div class="container user-show-font">
   <div class="user-info">
     <div class="user-info-left">
       <% if @user.image? %>
-      <%= image_tag @user.image.url ,class: "user_img"%>
+        <%= image_tag @user.image.url ,class: "user_img"%>
       <% else %>
-      <%= image_tag "user.png" ,class: "default_user_img"%>
+        <%= image_tag "user.png" ,class: "default_user_img"%>
       <%end%>
     </div>
     <div class="user-info-right">
       <p><%= current_user.username %></p>
       <% if current_user.id == @user.id %>
-      <%= link_to "ユーザー情報を編集する", edit_user_registration_path %>
+        <%= link_to "プロフィールを編集する", edit_user_registration_path,class:"user-edit" %>
       <% end %>
     </div>
   </div>
-  <hr class="bar">
+  <!--<hr class="bar">-->
 </div>
   <section>
     <ul class="tab">
@@ -26,10 +26,12 @@
       <li class="active">
         <% @shops.each do |shop| %>
           <div class="show-shops">
-              <%= image_tag shop.image_url, class:"shop-img-user" if shop.image? %>
-              <div class="show-shop-summaury">
+              <%= link_to shop_path(shop.id), target: :_blank do %>
+                <%= image_tag shop.image_url, class:"shop-img-user" if shop.image? %>
+              <%end%>
+              <!--<div class="show-shop-summaury">
                 <p><%= link_to  shop.name, shop_path(shop.id) %></p>
-              </div>
+              </div>-->
           </div>
         <% end %>
       </li>
