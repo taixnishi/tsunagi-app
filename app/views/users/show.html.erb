@@ -6,13 +6,17 @@
       <% else %>
         <%= image_tag "user.png" ,class: "default_user_img"%>
       <%end%>
+      <div class="follow-follwer">
+        <p><span>??</span> フォロー中</p>
+        <p><span>??</span> フォロワー</p>
+      </div>
     </div>
     <div class="user-info-right">
       <p><%= current_user.username %></p>
-      <% if current_user.id == @user.id %>
-        <%= link_to "プロフィールを編集する", edit_user_registration_path,class:"user-edit" %>
-      <% end %>
     </div>
+    <% if current_user.id == @user.id %>
+      <%= link_to "プロフィールを編集する", edit_user_registration_path,class:"user-edit" %>
+    <% end %>
   </div>
   <!--<hr class="bar">-->
 </div>
@@ -33,10 +37,10 @@
         <% end %>
       </li>
       <li>
-        タブ2
+        未実装
       </li>
       <li>
-        タブ3
+        未実装
       </li>
     </ul>
   </section>
