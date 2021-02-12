@@ -14,4 +14,5 @@ for (let i = 0; i < tab.length; i++){
         this.classList.add("active");
         contents[i].classList.add("active");
     });
+
 }

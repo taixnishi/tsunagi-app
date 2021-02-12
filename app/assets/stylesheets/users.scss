@@ -1,21 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-// *,*::before,*::after{
-//     box-sizing: border-box;
-// }
+*,*::before,*::after{
+    box-sizing: border-box;
+}
 // *{
 // color: #333;
 // text-decoration: none;
 // }
-.user-edit{
-    color: rgba(0,0,0,.7);
-    font-size: 14px;
-}
-.user-edit:hover{
-    text-decoration: none;
-    color: rgba(0,0,0,.5);
-}
 .user_img,.default_user_img{
     width: 72px;
     height: 72px;
@@ -36,34 +28,27 @@
     width: 70%;
     font-size: 1.25rem;
 }
-.bar{
-    display: block;
-    width: 100%;
-    height: 1.5px;
-    background-color: rgba(0,0,0,.5);
-    border: 0; 
+.user-edit{
+    color: rgba(0,0,0,.7);
+    font-size: 14px;
 }
-.show-shops{
-    width: 33%;
-    text-align: center;
-    margin-top: 1px;
-    margin-bottom: 1px;
+.user-edit:hover{
+    text-decoration: none;
+    color: rgba(0,0,0,.5);
 }
-.show-shops:hover{
-    transform: scale(0.99);
-}
-// .show-shop-summaury{
-//     text-align: center;
+
+// .bar{
+//     display: block;
+//     width: 100%;
+//     height: 1.5px;
+//     background-color: rgba(0,0,0,.5);
+//     border: 0; 
 // }
-.shop-img-user{
-    width: 100%;
-    height: 100px;
-}
 
 // tab
 section{
     width: auto;
-    max-width: 1000px;
+    max-width: 1024px;
     // margin: 50px auto;
 }
 .tab{
@@ -72,7 +57,6 @@ section{
 }
 .tab li{
     width: 33.3%;
-
 }
 .tab li a{
     display: flex;
@@ -93,28 +77,62 @@ section{
     border-bottom:2px solid #000;
     transition: all 0.6s;
 }
+
 .contents,ul.tab{
     margin: 0;
 }
 .contents li {
     background-color: #fff;
-    // padding: 20px;
     display: none;
     min-height: 300px;
-    // border: black solid 1px;
 }
-.contents li.active{
+
+.contents > li.active{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    // width: 100%;
     margin-top: 5px;
 }
-// @media screen and (min-width: 769px){
+.contents > li.active:after{
+    content: "";
+    display: block;
+    width: 33%; 
+    height: 0;
+}
 
-// }
-@media screen and (min-width: 769px){
+// 投稿したお店
+.user-shops{
+    position: relative;
+    width: 33%;
+    text-align: center;
+    margin: 1px 0;
+}
+.user-shops:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.user-shop-img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+
+
+
+@media screen and (min-width: 768px){
     .tab li a:not(.active):hover{
         opacity: 0.7;
+    }
+    .user-shops{
+        width: 24.8%;
     }
 
 }
@@ -152,7 +170,7 @@ section{
         background-color: rgba(0,0,0,.5);
         border: 0; 
     }
-    .show-shops{
+    .user-shops{
         width: 29%;
         border: black solid 1px;
         text-align: center;

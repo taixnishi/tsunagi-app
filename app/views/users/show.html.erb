@@ -25,18 +25,19 @@
     <ul class="contents">
       <li class="active">
         <% @shops.each do |shop| %>
-          <div class="show-shops">
+          <div class="user-shops">
               <%= link_to shop_path(shop.id), target: :_blank do %>
-                <%= image_tag shop.image_url, class:"shop-img-user" if shop.image? %>
+                <%= image_tag shop.image_url, class:"user-shop-img" if shop.image? %>
               <%end%>
-              <!--<div class="show-shop-summaury">
-                <p><%= link_to  shop.name, shop_path(shop.id) %></p>
-              </div>-->
           </div>
         <% end %>
       </li>
-      <li>タブ2</li>
-      <li>タブ3</li>
+      <li>
+        タブ2
+      </li>
+      <li>
+        タブ3
+      </li>
     </ul>
   </section>
 
