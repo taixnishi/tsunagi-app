@@ -55,6 +55,7 @@
     border: 1px solid rgba(0,0,0,.2);
     text-align: center;
     margin: 0 auto;
+    max-width: 510px;
 }
 .user-edit:hover{
     text-decoration: none;
@@ -75,6 +76,8 @@ section{
     width: auto;
     max-width: 1024px;
     margin: 20px auto;
+    // box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    // border-right: 0.5px solid rgba(0,0,0,.2);
 }
 .tab{
     display: flex;
@@ -153,11 +156,36 @@ section{
 
 
 @media screen and (min-width: 768px){
+    .user_img,.default_user_img{
+        width: 100px;
+        height: 100px;
+    }
     .tab li a:not(.active):hover{
         opacity: 0.7;
     }
     .user-shops{
         width: 24.8%;
+    }
+    .user-info{
+        display: flex;
+        margin: 10px auto;
+    }
+    .user-info-right{
+        margin-left: 50px;
+    }
+    .user-info-right>p{
+        font-size: 26px;
+    }
+    .follow-follwer{
+        right: -270px;
+        top: 50%;
+    }
+    .follow-follwer > p{
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    .follow-follwer > p > span{
+        font-size: 20px;
     }
 
 }
@@ -170,64 +198,72 @@ section{
     }
 }
 
-@media screen and (min-width: 1440px){
-    .user_img,.default_user_img{
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-    }
-    .user-info{
-        display: flex;
-        margin: 10px auto;
-    }
-    .user-info-left{
-        width: 30%;
-        text-align: center;
-    }
-    .user-info-right{
-        border-radius: 10px;
-        background-color: #fff;
-        width: 70%;
-        font-size: 1.25rem;
-    }
-    .bar{
-        display: block;
-        width: 100%;
-        height: 1.5px;
-        background-color: rgba(0,0,0,.5);
-        border: 0; 
-    }
-    .user-shops{
-        width: 29%;
-        border: black solid 1px;
-        text-align: center;
-        margin: 20px 10px;
-    }
-    .show-shop-summaury{
-        text-align: center;
-    }
-    
-    // tab
-    section{
-        // width: auto;
-        max-width: 1000px;
-        // margin: 50px auto;
-    }
-    .tab{
-        display: flex;
-    }
-    .tab li{
-        width: 20%;
+@media screen and (min-width: 1024px){
+    .user-edit{
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
     }
     .tab li a{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 40px;
-        color: black;
-        background-color: #fff;
-        transition: 0.3s;
-        border: black 1px solid;
+        font-size: 16px;
     }
+    // .user_img,.default_user_img{
+    //     width: 180px;
+    //     height: 180px;
+    //     border-radius: 50%;
+    // }
+    // .user-info{
+    //     display: flex;
+    //     margin: 10px auto;
+    // }
+    // .user-info-left{
+    //     width: 30%;
+    //     text-align: center;
+    // }
+    // .user-info-right{
+    //     border-radius: 10px;
+    //     background-color: #fff;
+    //     width: 70%;
+    //     font-size: 1.25rem;
+    // }
+    // .bar{
+    //     display: block;
+    //     width: 100%;
+    //     height: 1.5px;
+    //     background-color: rgba(0,0,0,.5);
+    //     border: 0; 
+    // }
+    // .user-shops{
+    //     width: 29%;
+    //     border: black solid 1px;
+    //     text-align: center;
+    //     margin: 20px 10px;
+    // }
+    // .show-shop-summaury{
+    //     text-align: center;
+    // }
+    
+    // tab
+    // section{
+    //     // width: auto;
+    //     max-width: 1000px;
+    //     // margin: 50px auto;
+    // }
+    // .tab{
+    //     display: flex;
+    // }
+    // .tab li{
+    //     width: 20%;
+    // }
+    // .tab li a{
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     height: 40px;
+    //     color: black;
+    //     background-color: #fff;
+    //     transition: 0.3s;
+    //     border: black 1px solid;
+    // }
     
 }

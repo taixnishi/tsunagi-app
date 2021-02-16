@@ -14,10 +14,10 @@
     <div class="user-info-right">
       <p><%= current_user.username %></p>
     </div>
+  </div>
     <% if current_user.id == @user.id %>
       <%= link_to "プロフィールを編集する", edit_user_registration_path,class:"user-edit" %>
     <% end %>
-  </div>
   <!--<hr class="bar">-->
 </div>
   <section>
