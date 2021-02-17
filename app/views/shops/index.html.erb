@@ -19,12 +19,14 @@
                 </ul>
               </div>
             </div>
-              <%= link_to shop_path(shop.id), method: :delete, class: "delete" do %>
-                <i class="far fa-trash-alt"></i>削除
-              <% end %>
-              /<%= link_to edit_shop_path(shop.id),class: "edit" do %>
-                <i class="far fa-edit"></i>編集
-              <% end %>
+            <% if user_signed_in? && current_user.id == shop.user_id %>
+                <%= link_to shop_path(shop.id), method: :delete, class: "delete" do %>
+                  <i class="far fa-trash-alt"></i>削除
+                <% end %>
+                /<%= link_to edit_shop_path(shop.id),class: "edit" do %>
+                  <i class="far fa-edit"></i>編集
+                <% end %>
+            <% end %>
           </div>
       </div>
     <% end %>

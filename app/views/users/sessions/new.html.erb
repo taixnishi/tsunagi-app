@@ -2,7 +2,6 @@
   <p class="section-title">Login</p>
   <p class="section-sub-title">ログイン</p>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="row">
       <div class="form-group">
         <i class="material-icons prefix">mail</i>
         <%= f.label :email,"メールアドレス" %><br />
@@ -22,7 +21,6 @@
         </div>
       <% end %>
       <%= f.submit "ログインする",class: "btn btn-primary"%>
-    </div>
   <% end %>
 <hr>
   <%= render "users/shared/links" %>

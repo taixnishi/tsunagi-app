@@ -17,6 +17,8 @@ gem 'cloudinary'
 gem "geocoder"
 gem 'gon'
 ##############################
+gem 'rails-i18n', '~> 6.0'
+gem 'devise-i18n'
 # ################################
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -65,7 +67,6 @@ group :test do
   gem 'minitest-reporters',       '1.3.8'
   gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.6'
-
 end
 
 group :production do
