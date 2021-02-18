@@ -22,6 +22,7 @@
       <% end %>
       <%= f.submit "ログインする",class: "btn btn-primary"%>
   <% end %>
+      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post ,class: "btn btn-primary" %>
 <hr>
   <%= render "users/shared/links" %>
 </div>
