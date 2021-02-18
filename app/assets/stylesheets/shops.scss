@@ -182,6 +182,7 @@
   // indexhtml　終わり
 
   // showhtml
+
   // modal
   #modal-open{
     position: fixed;
@@ -300,7 +301,25 @@
   // .show-main-left{
   //   // width: 30%;
   // }
+  .null-clothes{
+    display: flex;
+    justify-content: center; /*左右中央揃え*/
+    align-items: center;     /*上下中央揃え*/
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: 95%;
+    background-color: #F8F8F8;
+    border-radius: 10px;
+    height: auto;
+    min-height: 100px;
+    vertical-align: middle;
+  }
+
   .clothes{
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #F8F8F8;
     display: flex;
     width: 95%;
     margin: 0 auto;
@@ -424,6 +443,12 @@
   .shop-img-show{
     height: 300px;
   }
+  .null-clothes {
+    height: 300px;
+  }
+  .null-clothes > p {
+    font-size: 18px;
+  }
   .clothes{
     width: 100%;
   }
@@ -471,6 +496,7 @@
   .cloth-genre{
     font-size: 1.2rem;
   }
+
   
     // （ここにPC用スタイルを記述）
 }
@@ -498,6 +524,9 @@
     .shop-img-show{
       height: 400px;
     }
+    .null-clothes > p{
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width: 374px){
@@ -513,7 +542,6 @@
 }
 
 // show
-
 // .shop-summary > div {
   //   margin: 40px auto;
   //   text-align: right;

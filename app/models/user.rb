@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
         #  :confirmable # ,:omniauthable, omniauth_providers:[:twitter] 
 
-  has_many :shops
-  has_many :cloths
+  has_many :shops,dependent: :destroy
+  has_many :cloths,dependent: :destroy
   mount_uploader :image, ImageUploader
 
   def self.guest

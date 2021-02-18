@@ -18,19 +18,27 @@
           </div>
         </div>
       </div>
-      <p class="shop-cloth-title">お店の洋服</p>
+      <hr>
+        <p class="section-title">Clothes</p>
+        <p class="section-sub-title">洋服</p>
+      <% if @cloths.length > 0 %>
       <div class="clothes">
-        <% @cloths.each do |cloth| %>
-          <div class="cloth">
-            <%= image_tag cloth.image_url,class:"cloth-img" if cloth.image? %>
-            <div class="cloth-explation">
-              <p class="cloth-name"><%= cloth.cloth_name %></p>
-              <p class="cloth-genre"><%= cloth.cloth_contents %></p>
+          <% @cloths.each do |cloth| %>
+            <div class="cloth">
+              <%= image_tag cloth.image_url,class:"cloth-img" if cloth.image? %>
+              <div class="cloth-explation">
+                <p class="cloth-name"><%= cloth.cloth_name %></p>
+                <p class="cloth-genre"><%= cloth.cloth_contents %></p>
+              </div>
+              <%= link_to shop_cloth_path(@shop,cloth.id), method: :delete ,class: "delete show-btn" do %>
+                <i class="far fa-trash-alt"></i>削除
+              <% end %>
+              <hr>
             </div>
-            <%= link_to shop_cloth_path(@shop,cloth.id), method: :delete ,class: "delete show-btn" do %>
-              <i class="far fa-trash-alt"></i>削除
-            <% end %>
-            <hr>
+          <% end %>
+        <% else %>
+          <div class="null-clothes">
+            <p><%= @shop.name%>の洋服はまだ投稿されていません</p>
           </div>
         <% end %>
       </div>
@@ -95,7 +103,7 @@
     <div id="modal-close">
       閉じる
     </div>
-  </section>
+  </section> 
   <!--form -->
 
   <!--form -->

@@ -28,19 +28,29 @@
     </ul>
     <ul class="contents">
       <li class="active">
-        <% @shops.each do |shop| %>
-          <div class="user-shops">
-              <%= link_to shop_path(shop.id), target: :_blank do %>
-                <%= image_tag shop.image_url, class:"user-shop-img" if shop.image? %>
-              <%end%>
+      <% if @shops.length > 0 %>
+          <% @shops.each do |shop| %>
+            <div class="user-shops">
+                <%= link_to shop_path(shop.id) do %>
+                  <%= image_tag shop.image_url, class:"user-shop-img" if shop.image? %>
+                <%end%>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="null-shops">
+            <p>まだ投稿したことがありません</p>
           </div>
         <% end %>
       </li>
       <li>
-        未実装
+        <div class="null-shops">
+            <p>お気に入りのお店はありません</p>
+          </div>
       </li>
       <li>
-        未実装
+        <div class="null-shops">
+            <p>お気に入りの洋服はありません</p>
+        </div>
       </li>
     </ul>
   </section>
