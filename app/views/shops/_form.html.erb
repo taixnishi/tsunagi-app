@@ -21,7 +21,13 @@
     </div>
     <div class="col-12">
         <div class="form-group"> 
-            <%= f.label :address,'住所' %><br/>
+            <%= f.label :prefecture_code,'都道府県' %>
+            <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name,{prompt: false}, {class: "form-control input-sm"} %>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group"> 
+            <%= f.label :address,'店舗所在地（住所）' %><br/>
             <%= f.text_field :address ,class: 'form-control'%>   
         </div>
     </div>

@@ -14,8 +14,12 @@
               <hr class="blue-horizon" size="10" width="100%" noshade/>
               <div>
                 <ul class="store-data">
-                  <li><p>サンプル</p></li>
-                  <li><p>場所サンプル</p></li>
+                  <li><p><%= shop.genre %></p></li>
+                  <% if shop.prefecture_name %>
+                    <li><p><%= shop.prefecture_name %></p></li>
+                  <% else %>
+                    <li><p>不明</p></li>
+                  <% end %>
                 </ul>
               </div>
             </div>

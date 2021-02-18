@@ -19,6 +19,7 @@ gem 'gon'
 ##############################
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
+gem 'jp_prefecture'
 # ################################
 # Use Puma as the app server
 gem 'puma', '~> 4.1'

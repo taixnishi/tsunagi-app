@@ -55,7 +55,7 @@ class ShopsController < ApplicationController
 
     private
         def shop_params
-            params.require(:shop).permit(:content,:genre,:name,:image,:address,:latitude,:longitude)
+            params.require(:shop).permit(:content,:genre,:name,:image,:address,:latitude,:longitude,:prefecture_code)
         end
 
         def set_find 
