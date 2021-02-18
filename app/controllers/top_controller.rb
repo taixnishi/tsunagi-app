@@ -5,6 +5,9 @@ class TopController < ApplicationController
     @latest_shops = Shop.order(created_at: :desc).limit(6)
   end
 
+  def search 
+  end
+
   private
   def shop_params
       params.require(:shop).permit(:content,:genre,:name,:image,:address,:latitude,:longitude)

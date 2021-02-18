@@ -1,34 +1,36 @@
-<%= form_with( model: @shop, local: true ) do |f| %>
-<div class="row">
-<div class="col-12">
-    <div class="form-group"> 
-        <%=f.label :'name',"名前" %><br/>
-        <%= f.text_field :name,class: 'form-control' %>
+<div class="post-form">
+    <%= form_with( model: @shop, local: true ) do |f| %>
+    <div class="row">
+    <div class="col-12">
+        <div class="form-group"> 
+            <%=f.label :'name',"名前" %><br/>
+            <%= f.text_field :name,class: 'form-control' %>
+        </div>
     </div>
-</div>
-<div class="col-12">
-    <div class="form-group"> 
-        <%= f.label :genre,'ジャンル' %><br/>
-        <%= f.text_field :genre ,class: 'form-control'%>
+    <div class="col-12">
+        <div class="form-group"> 
+            <%= f.label :genre,'ジャンル' %><br/>
+            <%= f.text_field :genre ,class: 'form-control'%>
+        </div>
     </div>
-</div>
-<div class="col-12">
-    <div class="form-group"> 
-        <%= f.label :content,'説明' %><br/>
-        <%= f.text_area :content ,class: 'form-control'%>    
+    <div class="col-12">
+        <div class="form-group"> 
+            <%= f.label :content,'説明' %><br/>
+            <%= f.text_area :content ,class: 'form-control'%>    
+        </div>
     </div>
-</div>
-<div class="col-12">
-    <div class="form-group"> 
-        <%= f.label :address,'住所' %><br/>
-        <%= f.text_field :address ,class: 'form-control'%>   
+    <div class="col-12">
+        <div class="form-group"> 
+            <%= f.label :address,'住所' %><br/>
+            <%= f.text_field :address ,class: 'form-control'%>   
+        </div>
     </div>
-</div>
-<div class="col-12">
-    <div class="form-group"> 
-        <%= f.file_field :image%>
+    <div class="col-12">
+        <div class="form-group"> 
+            <%= f.file_field :image%>
+        </div>
     </div>
+    <%= f.submit '投稿する' ,class: 'btn btn-primary' %>
+    </div>
+    <% end %>
 </div>
-<%= f.submit '投稿する' ,class: 'btn btn-primary' %>
-</div>
-<% end %>
