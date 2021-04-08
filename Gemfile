@@ -16,6 +16,7 @@ gem 'rmagick'
 gem 'cloudinary'
 gem "geocoder"
 gem 'gon'
+gem "mimemagic", "~> 0.3.10"
 ##############################
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
