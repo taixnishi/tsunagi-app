@@ -7,12 +7,42 @@
         <%= image_tag "user.png" ,class: "default_user_img"%>
       <%end%>
       <div class="follow-follwer">
-        <p><span>??</span> フォロー中</p>
-        <p><span>??</span> フォロワー</p>
+        <p>
+          <!--<%= link_to following_user_path(@user.id) do %>-->
+            <span><%= @user.following.count %></span> フォロー中
+          <!--<% end %>-->
+        </p>
+        <p>
+          <!--<%= link_to followers_user_path(@user.id) do %>-->
+            <span><%= @user.followers.count %></span> フォロワー
+          <!--<% end %>-->
+        </p>
       </div>
     </div>
+
+
+  
     <div class="user-info-right">
       <p><%= current_user.username %></p>
+      <div class="follow-follower-btn">
+      <!-- フォローボタン(MYPAGEのユーザーがcurrent_userでなければ表示-------------------- && @user != current_user ---------------------------------->
+        <% if user_signed_in? && @user != current_user %>
+          <div id="follow_form">
+            <% if current_user.following?(@user) %>
+              <!-- フォロー解除ボタン ------------------------------------------------------------------>
+              <%= form_for(current_user, url: relationship_path(@user), method: :delete, remote: true) do |f| %>
+                <%= f.submit "フォロー解除", class: "btn btn-outline-secondary" %>
+              <% end %>
+            <% else %>
+              <!-- フォローボタン ------------------------------------------------------------------>
+              <%= form_for(current_user, url: relationships_path, method: :post, remote: true) do |f| %>
+                <%= hidden_field_tag :following_id, @user.id %>
+                <%= f.submit "フォローする", class: "btn btn-outline-secondary" %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
     <% if current_user.id == @user.id %>

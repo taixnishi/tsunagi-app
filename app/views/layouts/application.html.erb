@@ -12,12 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <%= render 'layouts/header' %>
-    <div class="wrap">
-      <%= yield %>
+    <div class="frame">
+      <%= render 'layouts/header' %>
+      <div class="wrap">
+        <%= yield %>
+      </div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= render 'layouts/footer' %>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -49,6 +49,10 @@
     background-color: #fff;
     font-size: 1.25rem;
     margin-top: 5px;
+    display: flex;
+}
+.follow-follower-btn{
+    margin-left: 6px;
 }
 .user-info-right > p{
     font-size: 18px;
@@ -167,8 +171,6 @@ section{
     left: 0;
     margin: auto;
 }
-
-
 
 
 @media screen and (min-width: 768px){

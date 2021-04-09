@@ -1,10 +1,7 @@
-  <div class="container">
+<div class="container">
   <div class="show-main">
-    <!---->
-  <!---------------------------------------------------------------------------------------------------------------->
     <div class="show-main-right">
       <%= image_tag @shop.image_url, class:"shop-img-show" if @shop.image? %>  
-      
       <div class="shop-info">
         <div class="shop-summary">
           <p><%= @shop.name%></p>
@@ -42,41 +39,16 @@
           </div>
         <% end %>
       </div>
-
     </div>
-
     <div class="show-content show-main-left">
-    <!---->
       <div class="shop-info">
-        <!--<div class="shop-summary">
-          <p><%= @shop.name%></p>
-          <hr class="blue-horizon" size="10" width="70%" noshade/>
-          <div>
-          <ul>
-            <li><p>ジャンル: <%= @shop.genre %></p></li>
-            <li><p>内容: <%= @shop.content %></p></li>
-            <li><p>住所: <%= @shop.address %></p></li>
-          </ul>
-          </div>
-        </div>-->
         <p class="map-info">Map</p>
         <p class="map-info-sub">お店の場所</p>
         <div id="map" class="shop-map"></div>
       </div>
     </div>
   </div>
-  </div>
-
-
-
-  <!-- -->
-  <!--<div class="postuser-info">
-    <p><span>投稿者: </span><%= @user.username %></p> 
-    <p>作成日: <%= @shop.created_at %></p>
-  <%= link_to "一覧に戻る", shops_path %>
-  </div>-->
-
-  <!-- -->
+</div>
   <div id="modal-open">
     ＋
   </div>
@@ -104,9 +76,7 @@
       閉じる
     </div>
   </section> 
-  <!--form -->
 
-  <!--form -->
 <!------------------------------------------------------------------------------------------------------------------>
 
 <script type="text/javascript">

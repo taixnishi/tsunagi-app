@@ -41,6 +41,12 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   margin-top: 56px;
   width: 100%;
 }
+.frame{
+  min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
+  position: relative;/* ←相対位置 */
+  padding-bottom: 60px; /* ←フッターの高さを指定 */
+  box-sizing: border-box;
+}
 section {
   overflow: auto;
 }
